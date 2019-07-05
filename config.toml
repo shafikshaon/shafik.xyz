@@ -5,6 +5,41 @@ copyright = "Mohd. Shafikur Rahman"
 theme="shafikshaon_hugo_portfolio"
 googleAnalytics = "UA-42600555-6"
 
+[Author]
+    name = "Mohd. Shafikur Rahman"
+    profile = "https://shafik.xyz"
+
+[Taxonomies]
+    tag = "tags"
+
+[Params]
+    intro = true
+    headline = "Shafik"
+    description = ""
+    github = "https://github.com/shafikshaon"
+    gitlab = "https://gitlab.com/shafikshaon"
+    linkedin = "https://linkedin.com/in/shafikshaon/"
+    twitter = "https://twitter.com/shafikshaon"
+    facebook = "https://facebook.com/shafikshaon"
+    stackoverflow = "https://stackoverflow.com/users/4751726/"
+    email = "shafikshaon@gmail.com"
+    opengraph = true
+    shareTwitter = true
+    shareFacebook = true
+    shareLinkedIn = true
+    dateFormat = "Mon, Jan 2, 2006"
+    highlightJsUrl = ""
+    highlightJsLocalUrl = ""
+    exponeaJsUrl = ""
+    exponeaTarget = ""
+    exponeaToken = ""
+    exponeaTrackVisits = false
+    readingTime = true
+    readingTimeText = "Estimated reading time:"
+
+[Permalinks]
+    post = "/:year/:month/:day/:filename/"
+
 [menu]
   [[menu.main]]
       name = "Me"
