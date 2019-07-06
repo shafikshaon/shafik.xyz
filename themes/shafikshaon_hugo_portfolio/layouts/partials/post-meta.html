@@ -1,7 +1,7 @@
 <ul class="post-meta">
     <li>
         <i class="far fa-calendar-alt"></i> <time datetime="{{ .Date.Format "2006-01-02" }}"
-        itemprop="datePublished">{{dateFormat (default "Mon, Jan 2, 2006" .Site.Params.dateFormat) .Date}}</time>
+        itemprop="datePublished"> {{dateFormat (default "Mon, Jan 2, 2006" .Site.Params.dateFormat) .Date}} </time>
     </li>
 
     {{ if .Site.Params.readingTime }}
