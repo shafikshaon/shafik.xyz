@@ -1,14 +1,25 @@
-<h3 class="post-title">{{ .Title }}</h3>
+<h2 class="post-title-details mt-5 mb-3">{{ .Title }}</h2>
 {{ if .Description }}
 <p class="post-description" itemprop="description">{{ .Description }}</p>
 {{ end }}
 
-        <p class="author-published"><strong>Published on: </strong> <time datetime="{{ .Date.Format " 2006-01-02" }}"
-            itemprop="datePublished">{{dateFormat (default "Mon, Jan 2, 2006" .Site.Params.dateFormat) .Date }}</time>
-    <strong>by</strong> {{ .Params.author | default .Site.Author.name }}</p>
+<div class="post-meta-details">
+    <p class="mb-0"><strong>Published on: </strong>
+        <time datetime="{{ .Date.Format "2006-01-02" }}"
+        itemprop="datePublished">{{dateFormat (default "Mon, Jan 2, 2006" .Site.Params.dateFormat) .Date }}</time>
+        <strong>by</strong> {{ .Params.author | default .Site.Author.name }}
+    </p>
 
-{{ if .Site.Params.readingTime }}
-<p class="reading-time">
-    {{ .Site.Params.readingTimeText }} {{ .Page.ReadingTime }} min(s)
-</p>
-{{ end }}
+    {{ if .Site.Params.readingTime }}
+    <p class="mb-0">
+        {{ .Site.Params.readingTimeText }} {{ .Page.ReadingTime }} min(s)
+    </p>
+    {{ end }}
+
+    {{ if .Site.Params.wordCount }}
+    <p class="mb-0">
+        Estimated total words: {{ .WordCount }}&nbsp;{{ i18n "words" }}
+    </p>
+    {{ end }}
+</div>
+

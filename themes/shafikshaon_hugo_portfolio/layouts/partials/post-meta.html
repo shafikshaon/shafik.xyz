@@ -1,0 +1,29 @@
+<ul class="post-meta">
+    <li>
+        <i class="far fa-calendar-alt"></i> <time datetime="{{ .Date.Format "2006-01-02" }}"
+        itemprop="datePublished">{{dateFormat (default "Mon, Jan 2, 2006" .Site.Params.dateFormat) .Date}}</time>
+    </li>
+
+    {{ if .Site.Params.readingTime }}
+    <li>
+        <i class="fas fa-clock"></i>&nbsp;{{ i18n "readingTime"}}{{ .ReadingTime }}&nbsp;{{ i18n "readTime" }}
+    </li>
+    {{ end }}
+
+    {{ if .Site.Params.wordCount }}
+    <li>
+        <i class="fas fa-book"></i>&nbsp;{{ .WordCount }}&nbsp;{{ i18n "words" }}
+    </li>
+    {{ end }}
+
+    {{ if .Params.author }}
+        <li>
+            <i class="fas fa-user"></i>&nbsp;{{ .Params.author | safeHTML }}
+        </li>
+    {{ else }}
+       <li>
+           <i class="fas fa-user"></i>&nbsp;{{ .Site.Author.name | safeHTML }}
+       </li>
+    {{ end }}
+</ul>
+

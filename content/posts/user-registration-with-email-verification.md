@@ -1,9 +1,13 @@
 ---
-title: "User registration"
-date: 2019-07-05T21:36:50+06:00
+title: "User Registration With Email Verification"
+description: ""
+date: 2019-05-28T23:09:09+06:00
+author: "Shafikur Rahman"
+tags: [
+    "Django",
+]
 draft: false
 ---
-
 Assume that I have a project named **user_registration** and it contains an app named **accounts**.
 
 At first, we need to configure our email server. So, got to `user_registration/setting.py` and write the follwoing lines:

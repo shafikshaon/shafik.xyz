@@ -1,0 +1,14 @@
+{{ if isset .Site.Taxonomies "tags" }}
+{{ if not (eq (len .Site.Taxonomies.tags) 0) }}
+<div class="container pl-1 mt-5 mb-4">
+    <h4 class="">{{ T "tags_title" }}</h4>
+    <div class="tag-list">
+        {{ range $name, $items := .Site.Taxonomies.tags }}
+        <a class="" href="{{ "tags/" | relLangURL }}{{ $name | urlize | lower }}">
+        {{ $name }}({{ .Count }})
+        </a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
+{{ end }}

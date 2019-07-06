@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+{{ partial "head.html" . }}
+<body>
+{{ partial "navbar.html" . }}
+<div class="container mt-5">
+
+    {{ partial "post-header.html" . }}
+
+    {{ partial "post-tags.html" . }}
+
+    <div class="post-content">
+        {{ partial "post-content.html" . }}
+    </div>
+
+    <div class="mt-5">
+        {{ partial "post-related.html" . }}
+    </div>
+</div>
+{{ partial "footer.html" . }}
+
+{{ partial "foot.html" . }}
+</body>
+</html>

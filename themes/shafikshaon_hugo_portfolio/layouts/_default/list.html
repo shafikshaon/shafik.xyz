@@ -4,24 +4,26 @@
 <body>
 {{ partial "navbar.html" . }}
 <div class="container mt-5">
+    <h1 class="post-list-title pt-2 pb-2">Articles</h1>
+
     {{ $pag := .Paginate .Data.Pages }}
     {{ range $pag.Pages }}
     <a href="{{ .Permalink }}">
         <div class="post">
             <div class="post-title">
-                <p>{{ .Title }}</p>
+                <p class="mb-0">{{ .Title }}</p>
             </div>
-
-            <div class="post-date">
-                <p>
-                    <time datetime="{{ .Date.Format "2006-01-02" }}"
-                    itemprop="datePublished">{{dateFormat (default "Mon, Jan 2, 2006" .Site.Params.dateFormat) .Date}}</time>
-                </p>
-            </div>
+            {{ partial "post-meta.html" . }}
+            {{ partial "post-tags.html" . }}
         </div>
     </a>
     {{ end }}
 </div>
+
+<div class="container">
+    {{ partial "pagination.html" . }}
+</div>
+
 {{ partial "footer.html" . }}
 
 {{ partial "foot.html" . }}

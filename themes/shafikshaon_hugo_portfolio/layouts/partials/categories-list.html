@@ -1,0 +1,13 @@
+{{ if isset .Site.Taxonomies "categories" }}
+{{ if not (eq (len .Site.Taxonomies.categories) 0) }}
+<div class="">
+    <h4 class="">{{ T "tags_title" }}</h4>
+    <div class="">
+        {{ range $name, $items := .Site.Taxonomies.categories }}
+        <a class="" href="{{ "categories/" | relLangURL }}{{ $name | urlize | lower }}"
+        title="{{ $name | humanize }}">{{ $name | humanize }}{{ if $.Site.Params.widgets.tags_counter }} ({{ $items.Count }}){{ end }}</a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
+{{ end }}
