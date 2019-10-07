@@ -4,7 +4,7 @@ description: ""
 date: 2019-10-08T12:56:09+06:00
 author: "Shafikur Rahman"
 tags: [
-    "Vue","Django", "Django-REST-Framework"
+    "Vue", "Django", "Django-REST-Framework",
 ]
 draft: false
 ---
