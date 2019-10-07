@@ -1,7 +1,7 @@
 ---
 title: "Todo app using Django, VueJS, and Django REST Framework"
 description: ""
-date: 2019-10-08T12:56:09+06:00
+date: 2019-10-08T00:56:09+06:00
 author: "Shafikur Rahman"
 tags: [
     "Vue", "Django", "Django-REST-Framework",
