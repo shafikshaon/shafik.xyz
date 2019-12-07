@@ -6,7 +6,7 @@ author: "Shafikur Rahman Shaon"
 tags: [
     "Vue", "Django", "Django-REST-Framework",
 ]
-draft: false
+draft: true
 ---
 > This is just a ruff. I will updated it ASAP.
 
