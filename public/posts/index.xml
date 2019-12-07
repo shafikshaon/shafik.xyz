@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Shafik</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on Shafik</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mohd. Shafikur Rahman</copyright>
+    <lastBuildDate>Sat, 19 Oct 2019 02:47:09 +0600</lastBuildDate>
+    
+	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ubuntu Server setup on Virtual box and connect with SSH</title>
+      <link>/posts/ubuntu-server-setup-on-virtual-box-and-connect-with-ssh/</link>
+      <pubDate>Sat, 19 Oct 2019 02:47:09 +0600</pubDate>
+      
+      <guid>/posts/ubuntu-server-setup-on-virtual-box-and-connect-with-ssh/</guid>
+      <description>Here, I guide how to connect with ubuntu server installed on virtual box via SSH.
+Install Virtual box and Ubuntu Server Download virtual box from Oracle Virtualbox.
+Install virtual box on your machine.
+Download ubuntu server from ubuntu.
+Then setup ubuntu server on virtual box.
+After successful setup, login to ubuntu server in virtual machine.
+Setup SSH on ubuntu server Then open terminal and install following packages:
+sudo apt updatesudo apt install openssh-serversudo apt install sshOnce installation is completed, the SSH service should start automatically.</description>
+    </item>
+    
+    <item>
+      <title>Interesting facts in JavaScript</title>
+      <link>/posts/interesting-facts-in-javascript/</link>
+      <pubDate>Fri, 19 Jul 2019 01:56:09 +0600</pubDate>
+      
+      <guid>/posts/interesting-facts-in-javascript/</guid>
+      <description>There is a great deal of amusing to be had when working in JavaScript. Notwithstanding for engineers that associate with it day by day, a few pieces of the language stay unexplored. I&#39;m going to feature few things you may not think about JavaScript.
+NaN is a number NaN (Not a number) is being a number. Also, NaN is not equal to itself. Actually NaN not equal to anything. The only way to verify anything is NaN or not by isNaN().</description>
+    </item>
+    
+    <item>
+      <title>User Registration With Email Verification</title>
+      <link>/posts/user-registration-with-email-verification/</link>
+      <pubDate>Tue, 28 May 2019 23:09:09 +0600</pubDate>
+      
+      <guid>/posts/user-registration-with-email-verification/</guid>
+      <description>Assume that I have a project named user_registration and it contains an app named accounts.
+At first, we need to configure our email server. So, got to user_registration/setting.py and write the follwoing lines:
+EMAIL_BACKEND = &#39;django.core.mail.backends.smtp.EmailBackend&#39; MAILER_EMAIL_BACKEND = EMAIL_BACKEND EMAIL_HOST = &#39;your_mail_server&#39; EMAIL_HOST_PASSWORD = &#39;your_password&#39; EMAIL_HOST_USER = &#39;your_email&#39; EMAIL_PORT = 465 EMAIL_USE_SSL = True DEFAULT_FROM_EMAIL = EMAIL_HOST_USER To test above configuration work, open up the terminal and navigate to user_registration project and run following command:</description>
+    </item>
+    
+  </channel>
+</rss>

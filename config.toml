@@ -5,7 +5,10 @@ copyright = "Mohd. Shafikur Rahman"
 theme="shafikshaon_hugo_portfolio"
 googleAnalytics = "UA-42600555-6"
 paginate = "5"
-categories = []
+categories = ["Programming", "DevOps", "Development"]
+disqusShortname = "shafik-xyz"
+enableRobotsTXT = true
+
 
 [taxonomies]
     categories  = "categories"

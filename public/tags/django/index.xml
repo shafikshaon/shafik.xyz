@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Django on Shafik</title>
+    <link>/tags/django/</link>
+    <description>Recent content in Django on Shafik</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Mohd. Shafikur Rahman</copyright>
+    <lastBuildDate>Tue, 28 May 2019 23:09:09 +0600</lastBuildDate>
+    
+	<atom:link href="/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>User Registration With Email Verification</title>
+      <link>/posts/user-registration-with-email-verification/</link>
+      <pubDate>Tue, 28 May 2019 23:09:09 +0600</pubDate>
+      
+      <guid>/posts/user-registration-with-email-verification/</guid>
+      <description>Assume that I have a project named user_registration and it contains an app named accounts.
+At first, we need to configure our email server. So, got to user_registration/setting.py and write the follwoing lines:
+EMAIL_BACKEND = &#39;django.core.mail.backends.smtp.EmailBackend&#39; MAILER_EMAIL_BACKEND = EMAIL_BACKEND EMAIL_HOST = &#39;your_mail_server&#39; EMAIL_HOST_PASSWORD = &#39;your_password&#39; EMAIL_HOST_USER = &#39;your_email&#39; EMAIL_PORT = 465 EMAIL_USE_SSL = True DEFAULT_FROM_EMAIL = EMAIL_HOST_USER To test above configuration work, open up the terminal and navigate to user_registration project and run following command:</description>
+    </item>
+    
+  </channel>
+</rss>
