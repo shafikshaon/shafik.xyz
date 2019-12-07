@@ -2,7 +2,8 @@
 <html lang="en">
 {{ partial "head.html" . }}
 <body>
-{{ partial "navbar.html" . }}
+<main>
+    {{ partial "navbar.html" . }}
 <div class="container mt-5">
 
     {{ partial "page-header.html" . }}
@@ -11,9 +12,15 @@
         {{ partial "page-content.html" . }}
     </div>
 
+    <div class="discuss">
+        {{ partial "disqus.html" . }}
+    </div>
+
 </div>
+    </main>
 {{ partial "footer.html" . }}
 
 {{ partial "foot.html" . }}
+
 </body>
 </html>

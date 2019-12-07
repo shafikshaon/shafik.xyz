@@ -3,7 +3,8 @@
 {{ partial "head.html" . }}
 <body>
 {{ partial "navbar.html" . }}
-<div class="container mt-5">
+<main>
+    <div class="container mt-5">
 
     {{ partial "post-header.html" . }}
 
@@ -18,11 +19,13 @@
     </div>
 
     <div class="discuss">
-        {{ template "_internal/disqus.html" . }}
+        {{ partial "disqus.html" . }}
     </div>
 </div>
+    </main>
 {{ partial "footer.html" . }}
 
 {{ partial "foot.html" . }}
+
 </body>
 </html>

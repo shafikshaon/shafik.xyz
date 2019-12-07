@@ -10,9 +10,11 @@
 
 html,
 body {
-    height: 100%;
     position: relative;
     font-family: 'Fira Mono', monospace;
+    display: flex;
+	flex-direction: column;
+	height: 100vh;
 }
 
 .navbar {
@@ -342,4 +344,24 @@ ul.recent-post-list li {
 
 ul.recent-post-list li a {
     color: #3c9a8f;
+}
+
+img[alt=github]{
+    width: 64px;
+}
+
+img[alt=hugo]{
+    width: 200px;
+}
+
+img[alt=go]{
+    width: 120px;
+}
+
+.footer{
+    flex-shrink: 0;
+}
+
+main {
+	flex: 1 0 auto;
 }
