@@ -85,7 +85,8 @@ if (!doNotTrack) {
 
 
 
-<div class="container mt-5">
+<main>
+    <div class="container mt-5">
 
     <h2 class="post-title-details mt-5 mb-3">User Registration With Email Verification</h2>
 
@@ -306,7 +307,27 @@ Now check <code>account_activation_token.check_token(user, token)</code> to chec
 
 
     </div>
+
+    <div class="discuss">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.pathname === "/contact/" || window.location.pathname === "/me/")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'shafik-xyz';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 </div>
+    </main>
 <footer class="footer">
     <div class="container pl-0">
         <div class="footer-right">
@@ -340,5 +361,6 @@ Now check <code>account_activation_token.check_token(user, token)</code> to chec
 <script src="/js/bootstrap.bundle.js"></script>
 
 <script src="/js/script.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,26 @@
+User-agent: *
+
+
+Disallow: /posts/
+
+Disallow: /
+
+Disallow: /tags/
+
+Disallow: /tags/ubuntu-server/
+
+Disallow: /posts/ubuntu-server-setup-on-virtual-box-and-connect-with-ssh/
+
+Disallow: /posts/interesting-facts-in-javascript/
+
+Disallow: /tags/javascript/
+
+Disallow: /tags/django/
+
+Disallow: /posts/user-registration-with-email-verification/
+
+Disallow: /contact/
+
+Disallow: /me/
+
+Disallow: /categories/

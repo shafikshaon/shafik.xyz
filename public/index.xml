@@ -55,7 +55,13 @@ EMAIL_BACKEND = &#39;django.core.mail.backends.smtp.EmailBackend&#39; MAILER_EMA
       <pubDate>Sat, 04 May 2019 00:41:09 +0600</pubDate>
       
       <guid>/contact/</guid>
-      <description>Contact me on: shafikshaon[at]gmail.com</description>
+      <description>Want to know about me?  Email: shafikshaon[at]gmail.com
+LinkedIn: https://www.linkedin.com/in/shafikshaon/
+Twitter: http://twitter.com/shafikshaon/
+GitHub: https://github.com/shafikshaon/
+GitLab: https://gitlab.com/shafikshaon/
+StackOverflow: https://stackoverflow.com/users/4751726/shafik/
+ </description>
     </item>
     
     <item>
@@ -64,8 +70,7 @@ EMAIL_BACKEND = &#39;django.core.mail.backends.smtp.EmailBackend&#39; MAILER_EMA
       <pubDate>Sat, 04 May 2019 00:41:09 +0600</pubDate>
       
       <guid>/me/</guid>
-      <description>Updated soon
-For now: https://linkedin.com/in/shafikshaon</description>
+      <description> Special thanks to </description>
     </item>
     
   </channel>
