@@ -1,7 +1,7 @@
 ---
 title: "Python: Generators and Iterators"
 description: "Python: Generators and Iterators"
-date: 2019-12-16T12:16:09+06:00
+date: 2019-12-16T00:16:09+06:00
 author: "Shafikur Rahman Shaon"
 tags: [
     "Python",
