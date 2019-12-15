@@ -37,6 +37,13 @@ print(next(name_iterator))
 print(next(name_iterator))
 ```
 
+**Output**
+```python
+John
+Doe
+Marry
+```
+
 We create aiterator type that iterates from `0` to limit. For example, if we set limit 5 then it prints 1, 2, 3, 4, 5.
 
 ```python
@@ -80,6 +87,15 @@ print(next(myitr))
 print(next(myitr))
 print(next(myitr))
 print(next(myitr))
+```
+
+**Output**
+```python
+0
+1
+2
+3
+4
 ```
 
 Some of built in iterations: lists, sets, dicts, and tuples.
