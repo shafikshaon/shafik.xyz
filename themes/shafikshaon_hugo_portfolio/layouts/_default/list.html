@@ -5,7 +5,7 @@
 {{ partial "navbar.html" . }}
 <main>
     <div class="container mt-5">
-    <h1 class="post-list-title pt-2 pb-2">Articles</h1>
+    <h1 class="post-list-title pt-2 pb-2">Posts</h1>
 
     {{ $pag := .Paginate .Data.Pages }}
     {{ range $pag.Pages }}

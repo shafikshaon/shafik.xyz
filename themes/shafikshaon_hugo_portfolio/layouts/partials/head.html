@@ -3,6 +3,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+    <meta name="description" content="{{ if .IsPage }}{{ .Params.description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    {{ with .Site.Params.keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
+
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    <meta property="og:title" content="{{ block "og-title" . }}{{ .Site.Title }}{{ end }}">
+    <meta property="og:description" content="{{ if .IsPage }}{{ .Params.description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:image" content="{{ if .IsPage }}{{ .Site.BaseURL }}{{ .Params.thumbnail }}{{ else }}{{ .Site.BaseURL }}{{ .Site.Params.thumbnail }}{{ end }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="{{ .Permalink }}">
+    <meta name="twitter:image" content="{{ if .IsPage }}{{ .Site.BaseURL }}{{ .Params.thumbnail }}{{ else }}{{ .Site.BaseURL }}{{ .Site.Params.thumbnail }}{{ end }}">
+
+    <base href="{{ .Permalink }}">
+    <title>
+        {{ .Site.Title }} - {{ if eq .Type "posts" }}Posts{{ end }} {{ if .IsPage }}  {{ .Params.title }}{{ else }}{{ .Site.Params.Title }}{{ end }}
+    </title>
+
     <!-- Bootstrap CSS 4.3.1 -->
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/bootstrap.css">
     <!-- Fontawesome 5.9.0 -->
@@ -15,7 +34,6 @@
     <link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700&display=swap" rel="stylesheet">
 
 
-    <title>{{ .Title }}</title>
 
     {{ template "_internal/google_analytics.html" . }}
 </head>

@@ -6,23 +6,47 @@
 <main>
     <div class="container mt-5">
 
-    {{ partial "post-header.html" . }}
+        {{ partial "post-header.html" . }}
 
-    {{ partial "post-tags.html" . }}
+        {{ partial "post-tags.html" . }}
 
-    <div class="post-content">
-        {{ partial "post-content.html" . }}
+        {{ if (gt .WordCount 400 )}}
+        <div class="mt-5">
+            <h6>Table of Contents</h6>
+            <aside>
+                {{ .TableOfContents }}
+            </aside>
+        </div>
+        {{ end }}
+
+        <div class="post-content">
+            {{ partial "post-content.html" . }}
+        </div>
+
+        <div class="mt-5">
+            {{ partial "post-related.html" . }}
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                {{ with .PrevInSection }}
+                 <h5>Previous</h5>
+                <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
+                {{ end }}
+            </div>
+            <div class="col-md-6">
+                {{ with .NextInSection }}
+                <h5>Next</h5>
+                <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
+                {{ end }}
+            </div>
+        </div>
+
+        <div class="discuss mt-5">
+            {{ partial "disqus.html" . }}
+        </div>
     </div>
-
-    <div class="mt-5">
-        {{ partial "post-related.html" . }}
-    </div>
-
-    <div class="discuss">
-        {{ partial "disqus.html" . }}
-    </div>
-</div>
-    </main>
+</main>
 {{ partial "footer.html" . }}
 
 {{ partial "foot.html" . }}
