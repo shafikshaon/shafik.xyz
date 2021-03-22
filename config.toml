@@ -7,7 +7,7 @@ googleAnalytics = "UA-42600555-6"
 paginate = "5"
 categories = ["Programming", "DevOps", "Development"]
 disqusShortname = "shafik-xyz"
-enableRobotsTXT = true
+enableRobotsTXT = false
 
 [sitemap]
   changefreq = "monthly"
