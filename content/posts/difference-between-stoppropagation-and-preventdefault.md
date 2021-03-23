@@ -4,7 +4,7 @@ description: "stopPropagation prevents further propagation of the current event 
 date: 2021-03-23T09:19:09+06:00
 author: "Shafikur Rahman Shaon"
 tags: [
-    "javascript", "vue", "node"
+    "javascript",
 ]
 draft: false
 ---
