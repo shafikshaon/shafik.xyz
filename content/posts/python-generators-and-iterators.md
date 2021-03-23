@@ -4,7 +4,7 @@ description: "Python: Generators and Iterators"
 date: 2019-12-16T00:16:09+06:00
 author: "Shafikur Rahman Shaon"
 tags: [
-    "Python",
+    "python",
 ]
 draft: false
 ---

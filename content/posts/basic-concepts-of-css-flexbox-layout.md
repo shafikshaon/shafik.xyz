@@ -4,7 +4,7 @@ description: "Basic concepts of CSS Flexbox Layout"
 date: 2019-12-16T12:16:09+06:00
 author: "Shafikur Rahman Shaon"
 tags: [
-    "CSS",
+    "css",
 ]
 draft: false
 ---

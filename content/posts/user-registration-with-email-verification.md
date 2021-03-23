@@ -4,7 +4,7 @@ description: "User Registration With Email Verification"
 date: 2019-05-28T23:09:09+06:00
 author: "Shafikur Rahman Shaon"
 tags: [
-    "Django",
+    "django",
 ]
 draft: false
 ---

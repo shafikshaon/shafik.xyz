@@ -4,7 +4,7 @@ description: "Interesting facts in JavaScript"
 date: 2019-07-19T01:56:09+06:00
 author: "Shafikur Rahman Shaon"
 tags: [
-    "Javascript",
+    "javascript",
 ]
 draft: false
 ---
