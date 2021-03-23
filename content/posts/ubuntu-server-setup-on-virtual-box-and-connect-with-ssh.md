@@ -4,7 +4,7 @@ description: "Ubuntu Server setup on Virtual box and connect with SSH"
 date: 2019-10-19T02:47:09+06:00
 author: "Shafikur Rahman Shaon"
 tags: [
-    "Ubuntu Server",
+    "ubuntu",
 ]
 draft: false
 ---
