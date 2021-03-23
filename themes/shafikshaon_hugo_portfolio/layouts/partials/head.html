@@ -21,7 +21,7 @@
 
     <base href="{{ .Permalink }}">
     <title>
-        {{ .Site.Title }} - {{ if eq .Type "posts" }}Posts{{ end }} {{ if .IsPage }}  {{ .Params.title }}{{ else }}{{ .Site.Params.Title }}{{ end }}
+        {{ .Site.Title }} {{ if eq .Type "posts" }}- Posts{{ end }} {{ if .IsPage }} - {{ .Params.title }}{{ else }} {{ .Site.Params.Title }}{{ end }}
     </title>
 
     <!-- Bootstrap CSS 4.3.1 -->

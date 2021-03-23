@@ -16,8 +16,6 @@ Twitter: http://twitter.com/shafikshaon/
 
 GitHub: https://github.com/shafikshaon/
 
-GitLab: https://gitlab.com/shafikshaon/
-
 StackOverflow: https://stackoverflow.com/users/4751726/shafik/
 
 

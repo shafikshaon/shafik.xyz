@@ -1,5 +1,5 @@
 ---
-title: "Basic concepts of CSS Flexbox Layout"
+title: "Basic Concepts of CSS Flexbox Layout"
 description: "Basic concepts of CSS Flexbox Layout"
 date: 2019-12-16T12:16:09+06:00
 author: "Shafikur Rahman Shaon"
