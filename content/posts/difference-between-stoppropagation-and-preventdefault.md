@@ -1,7 +1,7 @@
 ---
 title: "Difference Between stopPropagation and preventDefault?"
 description: "stopPropagation prevents further propagation of the current event in the capturing and bubbling phases. preventDefault prevents the default action the browser makes on that event."
-date: 2021-03-23T09:19:09+06:00
+date: 2021-03-23T09:29:09+06:00
 author: "Shafikur Rahman Shaon"
 tags: [
     "javascript",
