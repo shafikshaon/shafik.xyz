@@ -1,0 +1,98 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Shafik"
+copyright = "Mohd. Shafikur Rahman"
+theme="shafik_io_theme"
+googleAnalytics = "UA-42600555-6"
+paginate = "5"
+categories = []
+disqusShortname = "shafik-xyz"
+enableRobotsTXT = false
+pygmentsstyle = "vs"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[Author]
+    name = "Mohd. Shafikur Rahman"
+    profile = "https://shafik.io"
+
+[Taxonomies]
+    tag = "tags"
+    category = "categories"
+
+[Params]
+    intro = true
+    headline = "Shafik"
+    description = ""
+    github = "https://github.com/shafikshaon"
+    gitlab = "https://gitlab.com/shafikshaon"
+    linkedin = "https://linkedin.com/in/shafikshaon/"
+    twitter = "https://twitter.com/shafikshaon"
+    facebook = "https://facebook.com/shafikshaon"
+    stackoverflow = "https://stackoverflow.com/users/4751726/"
+    email = "shafikshaon@gmail.com"
+    opengraph = true
+    shareTwitter = true
+    shareFacebook = true
+    shareLinkedIn = true
+    dateFormat = "Mon, Jan 2, 2006"
+    highlightJsUrl = ""
+    highlightJsLocalUrl = ""
+    exponeaJsUrl = ""
+    exponeaTarget = ""
+    exponeaToken = ""
+    exponeaTrackVisits = false
+    showRelatedPosts = true
+    readingTime = true
+    wordCount = true
+    tags_counter = false
+    readingTimeText = "Estimated reading time:"
+    mode = "auto" # "dark" or "auto"
+    subtitle = "Just another programmer"
+
+    	# Optional 64x64 avatar image.
+    	avatar = "https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg"
+
+    	# Content types to disable Disqus on.
+    	disableDisqusTypes = ["page"]
+
+    	featherIconsCDN = true
+
+[Permalinks]
+    post = "/:year/:month/:day/:filename/"
+
+[menu]
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+  [[menu.main]]
+      name = "Posts"
+      url = "/posts/"
+      weight = 2
+
+    [[menu.main]]
+    name = "About"
+    url = "/about"
+    weight = 3
+
+    [[menu.main]]
+    name = "Tags"
+    url = "/tags"
+    weight = 4
+
+[[Params.social]]
+name = "Github"
+icon = "github"
+url = "https://github.com/shafikshaon/"
+
+[[Params.social]]
+name = "RSS"
+icon = "rss"
+url = "/index.xml"
