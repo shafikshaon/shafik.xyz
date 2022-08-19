@@ -124,257 +124,70 @@ Now we know about flex item properties:
 
 **order**: `order` property specify the order of the flex items. The order value must be a number, default value is `0`.
 
-```css
-<
-div class
-
-=
-"flex-container"
->
-< div style
-
-=
-"order: 3"
->
-
-1
-<
-/
-div >
-< div style
-
-=
-"order: 2"
->
-
-2
-<
-/
-div >
-< div style
-
-=
-"order: 4"
->
-
-3
-<
-/
-div >
-< div style
-
-=
-"order: 1"
->
-
-4
-<
-/
-div >
-<
-
-/
-div
+```html
+<div class="flex-container">
+    <div style="order: 3">1</div>
+    <div style="order: 2">2</div>
+    <div style="order: 4">3</div>
+    <div style="order: 1">4</div>
+</div>
 ```
 
 **flex-grow**: `flex-grow` property specifies how much flex item glow (increasing in size) relative to other flex items.
 The value must be a number, default value is `0`.
 The flex-grow property can be used to distribute space in proportion.
 
-```css
-<
-div class
-
-=
-"flex-container"
->
-< div style
-
-=
-"flex-grow: 1"
->
-
-1
-<
-/
-div >
-< div style
-
-=
-"flex-grow: 1"
->
-
-2
-<
-/
-div >
-< div style
-
-=
-"flex-grow: 8"
->
-
-3
-<
-/
-div >
-<
-
-/
-div >
+```html
+<div class="flex-container">
+    <div style="flex-grow: 1">1</div>
+    <div style="flex-grow: 1">2</div>
+    <div style="flex-grow: 8">3</div>
+</div>
 ```
 
 **flex-shrink**: `flex-shrink` property specifies how much a flex item will shrink relative to other flex items. The
 value must be a number, default value is `1`.
 Do not let the second flex item shrink as much as the other flex items:
 
-```css
-<
-div class
-
-=
-"flex-container"
->
-< div >
-
-1
-<
-/
-div >
-< div style
-
-=
-"flex-shrink: 0"
->
-
-2
-<
-/
-div >
-< div >
-
-3
-<
-/
-div >
-<
-
-/
-div >
+```html
+<div class="flex-container">
+    <div>1</div>
+    <div style="flex-shrink: 0">2</div>
+    <div>3</div>
+</div>
 ```
 
 **flex-basis**: `flex-basis` values specifies the size of item in terms of space it leaves as available space.
 Set the initial length of the second flex item to 20 pixels:
 
-```css
-<
-div class
-
-=
-"flex-container"
->
-< div >
-
-1
-<
-/
-div >
-< div style
-
-=
-"flex-basis: 20px"
->
-
-2
-<
-/
-div >
-< div >
-
-3
-<
-/
-div >
-<
-
-/
-div >
+```html
+<div class="flex-container">
+    <div>1</div>
+    <div style="flex-basis: 20px">2</div>
+    <div>3</div>
+</div>
 ```
 
 **flex**: `flex` property is a shorthand property for the `flex-grow`, `flex-shrink`, and `flex-basis` properties.
 Make the first flex item growable (1), shrinkable (1), and with an initial length of 20 pixels:
 
-```css
-<
-div class
-
-=
-"flex-container"
->
-< div style
-
-=
-"flex: 1 1 20px"
->
-
-1
-<
-/
-div >
-< div >
-
-2
-<
-/
-div >
-<
-
-/
-div >
+```html
+<div class="flex-container">
+    <div style="flex: 1 1 20px">1</div>
+    <div>2</div>
+</div>
 ```
 
 **align-self**: `align-self` property specifies the alignment for selected item inside flex container.
 Align the third flex item in the middle of the container:
 
-```css
-<
-div class
-
-=
-"flex-container"
->
-< div >
-
-1
-<
-/
-div >
-< div >
-
-2
-<
-/
-div >
-< div style
-
-=
-"align-self: center"
->
-
-3
-<
-/
-div >
-< div >
-
-4
-<
-/
-div >
-<
-
-/
-div >
+```html
+<div class="flex-container">
+    <div>1</div>
+    <div>2</div>
+    <div style="align-self: center">3</div>
+    <div>4</div>
+</div>
 ```
 
 > Here is a demo to play around about CSS Flex Box Module: https://shafikshaon.github.io/css-flexbox/
