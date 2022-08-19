@@ -105,7 +105,7 @@ print(next(myitr))
 4
 ```
 
-Some of built in iterations: lists, sets, dicts, and tuples.
+Some of built-in iterations: lists, sets, dicts, and tuples.
 
 # Generators
 
@@ -113,10 +113,10 @@ Generator is a simpler way to create iterators. Iterators methods automatically 
 
 Generator returns an object(iterator) which we can iterate over (one value at a time).
 
-We can create generator by defining a normal function with `yield` statement istead of `return` statement.
+We can create generator by defining a normal function with `yield` statement instead of `return` statement.
 
 `return` statement terminate function entirely, `yeild` statement pause the functional and saving all states and later
-continues from there succescive calls.
+continues from there successive calls.
 
 ```python
 def infinite_seq():
@@ -147,7 +147,7 @@ print(x.__next__())
 afterward.
 
 The state of generator function is remembered. When `__next__` object called for generator object, the previously
-yielded variable `num` is incremented and then yeilded again.
+yielded variable `num` is incremented and then yielded again.
 
 Generator expressions creates an anonymous generator function.
 

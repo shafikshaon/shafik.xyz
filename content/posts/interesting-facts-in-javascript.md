@@ -28,7 +28,7 @@ false
 
 ### null is an object
 
-`null` is an object. Sound odd! Right? But this is fact.
+`null` is an object. Sounds odd! Right? But this is fact.
 
 ```javascript
 >
@@ -80,7 +80,7 @@ Math.max() > Math.min()
 false
 ```
 
-If no argument pass via `min()` or `max()` then it return follwoing values.
+If no argument pass via `min()` or `max()` then it return following values.
 
 ```javascript
 >
@@ -122,7 +122,7 @@ executing
 
 ### Parenthesis position matter
 
-The return statement “does not see” that it has something to return so it returns nothing. Actually, JavaScript put `;`
+The return statement “does not see” that it has something to return, so it returns nothing. Actually, JavaScript put `;`
 after return.
 
 ```javascript
@@ -152,7 +152,7 @@ undefined
 
 ### Missing parameter default value
 
-In JavaScript, you can set parameter defaul value in the following way.
+In JavaScript, you can set parameter default value in the following way.
 
 ```javascript
 >

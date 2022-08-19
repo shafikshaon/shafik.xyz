@@ -6,13 +6,11 @@ author: "Shafikur Rahman Shaon"
 tags: [
 "Vue", "Django", "Django-REST-Framework",
 ]
-draft: true
+draft: false
 ---
-> This is just a ruff. I will updated it ASAP.
-
 
 Create a **Todo App** using **Django**, **Django REST Framework**, and **VueJS**.
-In Todo App, we have following functionalities:
+In Todo App, we have the following functionalities:
 
 1. User can add a todo task
 2. Edit todo task
@@ -22,7 +20,7 @@ To develop this Todo app follow the following procedure:
 
     django-admin startproject todoapp
 
-The create app `todo`
+The creation app `todo`
 
     python manage.py startapp todo
 
@@ -301,7 +299,7 @@ function ajax(url, method, options) {
 ```
 
 Change `vuefrontend/index.html`
-
+```
     <!DOCTYPE html>
     <html lang="en">
       <head>
@@ -313,6 +311,6 @@ Change `vuefrontend/index.html`
         <script src="/dist/build.js"></script>
       </body>
     </html>
-
+```
 
 

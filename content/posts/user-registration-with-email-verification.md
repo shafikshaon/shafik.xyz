@@ -8,11 +8,11 @@ tags: [
 ]
 draft: false
 ---
-Assume that I have a project named **user_registration** and it contains an app named **accounts**.
+Assume that I have a project named **user_registration**, and it contains an app named **accounts**.
 
 At first, we need to configure our email server. So, got to `user_registration/setting.py` and write the follwoing
 lines:
-
+```
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  
     MAILER_EMAIL_BACKEND = EMAIL_BACKEND  
     EMAIL_HOST = 'your_mail_server'  
@@ -21,73 +21,79 @@ lines:
     EMAIL_PORT = 465  
     EMAIL_USE_SSL = True  
     DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+```
 
 To test above configuration work, open up the terminal and navigate to `user_registration` project and run following
 command:
 
+```
     $ python manage.py shell
     >>> from django.core.mail import send_mail
     >>> send_mail( 'Subject here', 'Here is the message.', 'me@shafikshaon.com', ['shafikshaon@gmail.com'], fail_silently=False, )
+```
 
 It will return 1 as status code.
 Then check your mail, a mail will arrive.
 
 Now create a form in `accounts/templates/accounts/signup.html` and write the following code:
 
+```
     <!DOCTYPE html>  
-    <html lang="en">  
-    <head>  
-        <title>Signup</title>  
-        <meta charset="utf-8">  
-        <meta name="viewport" content="width=device-width, initial-scale=1">  
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">  
-    </head>  
-    <body>  
-
-    <div class="container" style="margin-top: 50px;">  
-        <div class="row justify-content-center">  
-            <div class="col-md-5 shadow-sm p-3 mb-5 bg-white rounded">  
-                <h2>Signup</h2>  
-                <form method="post">  
-                    {% csrf_token %}  
-                    <div class="form-group">  
-                        <label for="first_name">First Name:</label>  
-                        <input type="text" class="form-control" id="first_name" placeholder="Enter first name"  
-      name="first_name">  
-                    </div>  
-                    <div class="form-group">  
-                        <label for="last_name">Last Name:</label>  
-                        <input type="text" class="form-control" id="last_name" placeholder="Enter last name"  
-      name="last_name">  
-                    </div>  
-                    <div class="form-group">  
-                        <label for="username">Username:</label>  
-                        <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">  
-                    </div>  
-                    <div class="form-group">  
-                        <label for="email">Email:</label>  
-                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">  
-                    </div>  
-                    <div class="form-group">  
-                        <label for="pwd1">Password:</label>  
-                        <input type="password" class="form-control" id="pwd1" placeholder="Enter password" name="password1">  
-                    </div>  
-                    <div class="form-group">  
-                        <label for="pwd2">Confirm Password:</label>  
-                        <input type="password" class="form-control" id="pwd2" placeholder="Reenter password"  
-      name="password2">  
-                    </div>  
-                    <button type="submit" class="btn btn-primary">Submit</button>  
-                </form>  
+        <html lang="en">  
+        <head>  
+            <title>Signup</title>  
+            <meta charset="utf-8">  
+            <meta name="viewport" content="width=device-width, initial-scale=1">  
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">  
+        </head>  
+        <body>  
+    
+        <div class="container" style="margin-top: 50px;">  
+            <div class="row justify-content-center">  
+                <div class="col-md-5 shadow-sm p-3 mb-5 bg-white rounded">  
+                    <h2>Signup</h2>  
+                    <form method="post">  
+                        {% csrf_token %}  
+                        <div class="form-group">  
+                            <label for="first_name">First Name:</label>  
+                            <input type="text" class="form-control" id="first_name" placeholder="Enter first name"  
+          name="first_name">  
+                        </div>  
+                        <div class="form-group">  
+                            <label for="last_name">Last Name:</label>  
+                            <input type="text" class="form-control" id="last_name" placeholder="Enter last name"  
+          name="last_name">  
+                        </div>  
+                        <div class="form-group">  
+                            <label for="username">Username:</label>  
+                            <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">  
+                        </div>  
+                        <div class="form-group">  
+                            <label for="email">Email:</label>  
+                            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">  
+                        </div>  
+                        <div class="form-group">  
+                            <label for="pwd1">Password:</label>  
+                            <input type="password" class="form-control" id="pwd1" placeholder="Enter password" name="password1">  
+                        </div>  
+                        <div class="form-group">  
+                            <label for="pwd2">Confirm Password:</label>  
+                            <input type="password" class="form-control" id="pwd2" placeholder="Reenter password"  
+          name="password2">  
+                        </div>  
+                        <button type="submit" class="btn btn-primary">Submit</button>  
+                    </form>  
+                </div>  
             </div>  
         </div>  
-    </div>  
-
-    </body>  
+    
+        </body>  
     </html>
+```
 
 Now create a form in `accounts/templates/accounts/acc_active_email.html` and write the following code:
 
+```
     {% autoescape off %}  
     Hi {{ user.username }},  
     Please click on the link to confirm your registration,  
@@ -95,9 +101,11 @@ Now create a form in `accounts/templates/accounts/acc_active_email.html` and wri
     http://{{ domain }}{% url 'activate' uidb64=uid token=token %}  
     If you think, it's not you, then just ignore this email.  
     {% endautoescape %}
+```
 
 Now open up `accounts/urls.py` and write the following path:
 
+```
     from django.urls import path  
     from accounts import views  
 
@@ -105,10 +113,12 @@ Now open up `accounts/urls.py` and write the following path:
         path('signup/', views.signup, name="signup"),  
         path('activate/<uidb64>/<token>/',views.activate, name='activate'),  
     ]
+```
 
 Now open up `accounts/tokens.py` and write the following code:
 
-    from django.contrib.auth.tokens import PasswordResetTokenGenerator  
+```
+from django.contrib.auth.tokens import PasswordResetTokenGenerator  
     from django.utils import six  
 
 
@@ -120,9 +130,11 @@ Now open up `accounts/tokens.py` and write the following code:
             )  
 
     account_activation_token = AccountActivationTokenGenerator()
+```
 
 Now open up `accounts/forms.py` and write the following code:
 
+```
     from django.contrib.auth.forms import UserCreationForm  
     from django.contrib.auth.models import User  
 
@@ -131,9 +143,11 @@ Now open up `accounts/forms.py` and write the following code:
         class Meta:  
             model = User  
             fields = ('email', 'first_name', 'last_name', 'username')
+```
 
 Now open up `accounts/views.py` and write the following code:
 
+```
     from django.http import HttpResponse  
     from django.shortcuts import render  
     from django.contrib.sites.shortcuts import get_current_site  
@@ -188,6 +202,7 @@ Now open up `accounts/views.py` and write the following code:
             return HttpResponse('Thank you for your email confirmation. Now you can login your account.')  
         else:  
             return HttpResponse('Activation link is invalid!')
+```
 
 When user signup, `is_active` set to `False` that means user set to inactive during signup process.
 By `render_to_string()` method which data/ value send over conext. Here, data/ value send
