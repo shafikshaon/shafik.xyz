@@ -6,4 +6,3 @@
 
 [https://shafik.io/](https://shafik.io/)
 
-# shafik.io
