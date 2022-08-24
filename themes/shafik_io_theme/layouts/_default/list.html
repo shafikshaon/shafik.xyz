@@ -12,7 +12,7 @@
 		<h2 class="page-title">{{ .Name }}</h2>
 		{{ end }}
 		
-		{{ .Content }}
+		{{ .Content | html }}
 
 		<ul class="posts flat">
 			{{ $paginator := .Paginate (where .Data.Pages "Params.hidden" "ne" true) }}

@@ -13,7 +13,7 @@ pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
 [sitemap]
-  changefreq = "monthly"
+  changefreq = "weekly"
   filename = "sitemap.xml"
   priority = 0.5
 
@@ -50,7 +50,7 @@ pygmentscodefencesguesssyntax = true
     showRelatedPosts = true
     readingTime = true
     wordCount = true
-    tags_counter = false
+    tags_counter = true
     readingTimeText = "Estimated reading time:"
     mode = "auto" # "dark" or "auto"
     subtitle = "Just another programmer"
@@ -92,7 +92,7 @@ name = "Github"
 icon = "github"
 url = "https://github.com/shafikshaon/"
 
-[[Params.social]]
+[[Params.rss]]
 name = "RSS"
 icon = "rss"
-url = "/index.xml"
+url = "/rss.xml"
