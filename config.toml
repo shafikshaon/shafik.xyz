@@ -95,4 +95,4 @@ url = "https://github.com/shafikshaon/"
 [[Params.rss]]
 name = "RSS"
 icon = "rss"
-url = "/rss.xml"
+url = "/index.xml"
