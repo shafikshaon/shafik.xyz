@@ -6,7 +6,7 @@ author: "Shafikur Rahman Shaon"
 tags: [
 "Vue", "Django", "Django-REST-Framework",
 ]
-draft: false
+draft: true
 ---
 
 Create a **Todo App** using **Django**, **Django REST Framework**, and **VueJS**.
