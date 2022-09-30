@@ -54,7 +54,7 @@
                 {{ range $key, $value := .Data.Terms.ByCount }}
                 {{ if $value.Name}}
                 <li>
-                    <a href="{{ $value.Name | urlize }}">
+                    <a href="/tags/{{ $value.Name | urlize }}">
                         {{ $value.Name }} <span>({{ $value.Count }})</span>
                     </a>
                 </li>
