@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+{{ partial "head.html" . }}
+<body>
+<a class="skip-link" href="#main">Skip to main</a>
+<main id="main">
+    <div class="content">
+        {{ partial "header.html" . }}
+        <section>
+            {{ if ne .Title "Tags" }}
+            <ul reversed class="list">
+                {{ $paginator := .Paginate (where .Data.Pages "Params.hidden" "ne" true) }}
+                {{ range $paginator.Pages }}
+                    {{ if .Draft }}
+                    {{ else }}
+                        <li>
+                            <article class="post-entry">
+                                <header class="entry-header">
+                                    <h2>
+                                        <a href="{{ .RelPermalink }}">{{.Title}}{{ if .Draft }}<sup
+                                                class="draft-label">DRAFT</sup>{{ end }}</a>
+                                    </h2>
+                                </header>
+                                <div class="entry-content">
+                                    <p>
+                                        {{ if isset .Params "description" }}
+                                        {{ .Description }}
+                                        {{ else if gt (countrunes (.Content | plainify)) 120 }}
+                                        {{ slicestr (.Content | plainify) 0 120 | safeHTML }}...
+                                        {{ else }}
+                                        {{ .Content | plainify | safeHTML }}
+                                        {{ end }}
+                                    </p>
+                                </div>
+                                <footer class="entry-footer"><span title="2021-01-20 00:00:00 +0000 UTC">{{ dateFormat "Jan 2, 2006" .Date }}</span>&nbsp;·&nbsp;{{
+                                    .Page.ReadingTime }} min(s)&nbsp;·&nbsp;{{ if gt .Params.tags 0 }}
+                                    {{ range .Params.tags }}
+                                        <span class="flat-tags">
+                                            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+                                        </span>
+                                    {{ end }}
+                                    {{ end }}
+                                </footer>
+                            </article>
+                        </li>
+                    {{ end }}
+                {{ end }}
+            </ul>
+            {{ template "partials/paginator.html" . }}
+            {{ else }}
+            <h1>Tags</h1>
+            {{ $data := .Data }}
+            <ul class="tags">
+                {{ range $key, $value := .Data.Terms.ByCount }}
+                {{ if $value.Name}}
+                <li>
+                    <a href="{{ $value.Name | urlize }}">
+                        {{ $value.Name }} <span>({{ $value.Count }})</span>
+                    </a>
+                </li>
+                {{ end }}
+                {{ end }}
+            </ul>
+            {{ end }}
+        </section>
+    </div>
+
+    {{ partial "footer.html" . }}
+</main>
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+
+<!doctype html>
+<html lang="en">
+{{ partial "head.html" . }}
+<body>
+<a class="skip-link" href="#main">Skip to main</a>
+<main id="main">
+    <div class="content">
+        {{ partial "header.html" . }}
+        {{ .Content }}
+
+        <h2 class="home-heading"><div><div class="title">Latest Posts</div></div><a class="view-all-posts" href="/posts">View all</a></h2>
+        <section>
+            <ul reversed class="list">
+                {{ range (first 10 (where .Site.RegularPages "Section" "posts" ).ByDate.Reverse) }}
+                <li class="recent-posts">
+                    <a class="link" href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
+                    <hr class="hr-list">
+                    <time class="g time" datetime="{{ dateFormat "2006-01-02" .Date }}">{{ dateFormat "02/01/06" .Date }}</time>
+                </li>
+                {{ end }}
+            </ul>
+        </section>
+    </div>
+
+    {{ partial "footer.html" . }}
+</main>
+</body>
+</html>
