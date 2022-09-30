@@ -1,4 +1,4 @@
-baseURL = 'http://localhost:1313'
+baseURL = 'https://shafik.io'
 languageCode = 'en-us'
 title = 'Shafik'
 theme="shafikio_theme"
@@ -6,9 +6,11 @@ enableRobotsTXT= true
 paginate= 5
 googleAnalytics = "UA-42600555-6"
 copyright = "Mohd. Shafikur Rahman"
+uglyURLs = true
 
 [permalinks]
   pages = "/:slug"
+  posts = '/:year/:month/:title/'
 
 [taxonomies]
   tag = "tags"
@@ -19,6 +21,14 @@ copyright = "Mohd. Shafikur Rahman"
     tags_counter = true
     readingTimeText = "Estimated reading time:"
 
+[sitemap]
+    changefreq = "weekly"
+    filename = "sitemap.xml"
+    priority = 0.5
+
+[Author]
+    name = "Mohd. Shafikur Rahman"
+    profile = "https://shafik.io"
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
