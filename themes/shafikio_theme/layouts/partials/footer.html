@@ -2,9 +2,12 @@
     <section>
         <nav>
             <span class="desktop-only">
-                © {{ dateFormat "2006" now }} Made by <a href="{{.Site.BaseURL}}">{{ .Site.Copyright }}</a>
+                © {{ dateFormat "2006" now }} Made by <a href="{{.Site.BaseURL}}">{{ .Site.Copyright }}</a>    ·
             </span>
-            <a href="{{.Site.BaseURL}}/rss.xml" target="_blank" rel="noopener noreferrer">RSS</a>
+            <a href="{{.Site.BaseURL}}/rss.xml" target="_blank" rel="noopener noreferrer">RSS</a>·
+            <span class="desktop-only">
+                <strong>Last build at</strong> {{ .GitInfo.Lastmod}}
+            </span>
         </nav>
         <nav>
             <a href="https://gohugo.io/" title="Hugo" target="_blank"
