@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-Allow: /contact/
-Allow: /posts/
-{{ range where .Site.RegularPages "Type" "posts" }}
-Allow: {{.RelPermalink}}
-{{end}}
-Sitemap: {{ .Sitemap.Filename | default "sitemap.xml" | absURL }}`
