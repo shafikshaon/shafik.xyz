@@ -35,7 +35,7 @@
                 {{ range $index, $tag := . }} {{ with $.Site.GetPage (printf "/%s/%s"
                 $taxonomy $tag) -}}
                 <span class="flat-tags">
-                    <a href="{{ .Permalink }}">{{ $tag | urlize }}</a>
+                    <a href="{{.Site.BaseURL}}/tags/{{ .Permalink }}">{{ $tag | urlize }}</a>
                 </span>
                 {{- end -}} {{- end -}}
                 {{ end }}
