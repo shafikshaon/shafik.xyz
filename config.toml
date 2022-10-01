@@ -20,6 +20,7 @@ uglyURLs = true
     wordCount = true
     tags_counter = true
     readingTimeText = "Estimated reading time:"
+    opengraph = true
 
 [sitemap]
     changefreq = "weekly"
@@ -32,7 +33,7 @@ uglyURLs = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
-  section = ["HTML"]
+  section = ["HTML", "RSS"]
 
 [outputFormats.RSS]
   mediatype = "application/rss"
