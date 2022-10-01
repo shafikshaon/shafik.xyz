@@ -31,18 +31,6 @@ uglyURLs = true
     name = "Mohd. Shafikur Rahman"
     profile = "https://shafik.io"
 
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
-  section = ["HTML", "RSS"]
-
-[outputFormats.RSS]
-  mediatype = "application/rss"
-  baseName = "atom"
-
-[outputFormats.JSON]
-  mediatype = "application/json"
-  baseName = "feed"
-
 [menu]
     [[menu.main]]
         identifier = "home"
