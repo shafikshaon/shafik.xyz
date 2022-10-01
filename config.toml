@@ -14,6 +14,7 @@ uglyURLs = true
 
 [taxonomies]
   tag = "tags"
+  series = "series"
 
 [Params]
     readingTime = true

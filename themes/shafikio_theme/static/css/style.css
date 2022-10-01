@@ -152,7 +152,7 @@ h1.post-title {
     margin-bottom: 0;
 }
 
-.post-body{
+.post-body {
     margin-top: 3rem;
 }
 
@@ -175,9 +175,11 @@ header ul a:first-child {
 .list li time {
     flex: 0 1 auto;
 }
-.post-title{
+
+.post-title {
     border-bottom: 2px solid rgb(0 0 0);
 }
+
 .hr-list {
     margin-top: 0;
     margin-bottom: 0;
@@ -349,7 +351,7 @@ h2.home-heading {
     padding: 0;
 }
 
-a.view-all-posts{
+a.view-all-posts {
     align-items: center;
     -webkit-appearance: none;
     background: #ffffff;
@@ -358,7 +360,7 @@ a.view-all-posts{
     color: #4b5056;
     cursor: pointer;
     display: inline-flex;
-    font-family: "Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;;
     font-size: 1rem;
     font-weight: 500;
     gap: 0.25rem;
@@ -367,7 +369,8 @@ a.view-all-posts{
     padding: 0.6rem 1rem;
     text-decoration: none;
 }
-a.view-all-posts:hover{
+
+a.view-all-posts:hover {
     border-color: #868e96;
     color: #212529;
 }
@@ -375,17 +378,20 @@ a.view-all-posts:hover{
 .footer {
     padding: 3rem 0;
 }
+
 .footer section {
     align-items: center;
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
 }
+
 .footer nav {
     display: flex;
     gap: 0.25rem;
     margin: 0 1rem;
 }
+
 .footer a, .footer span {
     align-items: center;
     color: #4b5056;
@@ -399,4 +405,22 @@ a.view-all-posts:hover{
     display: inline-block;
     max-height: 20px;
     width: auto;
+}
+
+.series-list {
+    padding: 1rem 0;
+    border-top: 0.25rem solid rgb(0 0 0);
+    border-bottom: 0.25rem solid rgb(0 0 0);
+}
+.series-list h4{
+    margin-top: 0;
+}
+.series-list li{
+    list-style: none;
+    padding-top: 0.5rem;
+}
+
+.series-list .series-list-item.active {
+    color: #4b5056;
+    font-weight: bold;
 }

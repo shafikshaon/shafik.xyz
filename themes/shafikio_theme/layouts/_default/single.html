@@ -6,6 +6,7 @@
 <main id="main">
     <div class="content">
         {{ partial "header.html" . }}
+
         <section>
             <h1 class="post-title">{{ .Title }}</h1>
             {{ if ne .Title "About" }}
@@ -23,6 +24,8 @@
                 </div>
             </div>
             {{ end }}
+
+            {{ partial "series.html" . }}
 
             <div class="post-body">
                 {{ .Content }}
@@ -42,6 +45,9 @@
             </div>
             {{ end }}
         </section>
+
+        {{ partial "series.html" . }}
+
         {{ if eq .Section "posts" }}
         <div id="comments">
             {{ partial "comments.html" $ }}
