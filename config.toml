@@ -1,20 +1,23 @@
 baseURL = 'https://shafik.io'
 languageCode = 'en-us'
 title = 'Shafik'
-theme="shafikio_theme"
-enableRobotsTXT= true
-paginate= 5
+theme = "shafikio_theme"
+enableRobotsTXT = true
+paginate = 5
 googleAnalytics = "UA-42600555-6"
 copyright = "Mohd. Shafikur Rahman"
 uglyURLs = true
+enableEmoji = true
+enableGitInfo = true
 
 [permalinks]
-  pages = "/:slug"
-  posts = '/:year/:month/:title/'
+    pages = "/:slug"
+    posts = '/:year/:month/:slug/'
 
 [taxonomies]
-  tag = "tags"
-  series = "series"
+    tag = "tags"
+    series = "series"
+    category = 'categories'
 
 [Params]
     readingTime = true
