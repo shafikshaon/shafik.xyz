@@ -56,6 +56,11 @@ enableGitInfo = true
         name = "Tags"
         url = "/tags/"
         weight = 4
+    [[menu.main]]
+        identifier = "series"
+        name = "Series"
+        url = "/series/"
+        weight = 5
 
 [[Params.rss]]
     name = "RSS"
