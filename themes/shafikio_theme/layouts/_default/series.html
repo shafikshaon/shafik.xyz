@@ -15,11 +15,11 @@
             </li>
             {{ end }}
         </ul>
-        {{ if isset .Params "series" }}
+        {{ if .Params.series }}
         <h1>Series</h1>
         <section id="series">
             <div>
-                <h4 class="series-title" onclick="toggleSeriesList()">This article is part of a series.</h4>
+                <h4 class="series-title" onclick="toggleSeriesList()">{{ .Params.title}}</h4>
                 <ul id="series-list" class="series-list">
                     {{ range $num,$post := (index .Site.Taxonomies.series (index .Params.series 0 | urlize)).Pages.ByDate }}
                     {{ if eq $post.Permalink $.Page.Permalink }}
