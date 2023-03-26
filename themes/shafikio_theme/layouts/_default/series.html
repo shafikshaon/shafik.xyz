@@ -8,8 +8,7 @@
         {{ partial "header.html" . }}
         {{.Params.series}}
         <br>
-        {{ .Site.Taxonomies.series }}
-        {{ if isset .Params "series" }}
+        {{ if .Site.Taxonomies.series }}
         <h1>Series</h1>
         <section id="series">
             <div>
