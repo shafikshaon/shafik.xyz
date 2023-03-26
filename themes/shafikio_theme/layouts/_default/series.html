@@ -7,6 +7,14 @@
     <div class="content">
         {{ partial "header.html" . }}
         {{ .Params }}
+
+        <ul>
+            {{ range .Pages }}
+            <li>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </li>
+            {{ end }}
+        </ul>
         {{ if isset .Params "series" }}
         <h1>Series</h1>
         <section id="series">
