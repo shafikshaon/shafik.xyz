@@ -7,6 +7,8 @@
     <div class="content">
         {{ partial "header.html" . }}
         {{.Params}}
+        {{.Params.series}}
+        {{.Site}}
         {{ if isset .Params "series" }}
         <h1>Series</h1>
         <section id="series">
