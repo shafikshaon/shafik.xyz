@@ -8,22 +8,24 @@
         {{ partial "header.html" . }}
         <h1>Series</h1>
         <section id="series">
-            <ul class="series-list">
-                <h4>This article is part of a series.</h4>
-                {{ range $num,$post := (index .Site.Taxonomies.series (index .Params.series 0 | urlize)).Pages.ByDate }}
-                {{ if eq $post.Permalink $.Page.Permalink }}
-                <li class="series-list-item active">
-                    Part {{ add $num 1 }}: This Article
-                </li>
-                {{ else }}
-                <li class="list-group-item">
-                    <a href="{{$post.Permalink}}">
-                        Part {{ add $num 1 }}: {{ $post.Params.title}}
-                    </a>
-                </li>
-                {{end}}
-                {{end}}
-            </ul>
+            <div>
+                <ul class="series-list">
+                    <h4>This article is part of a series.</h4>
+                    {{ range $num,$post := (index .Site.Taxonomies.series (index .Params.series 0 | urlize)).Pages.ByDate }}
+                    {{ if eq $post.Permalink $.Page.Permalink }}
+                    <li class="series-list-item active">
+                        Part {{ add $num 1 }}: This Article
+                    </li>
+                    {{ else }}
+                    <li class="list-group-item">
+                        <a href="{{$post.Permalink}}">
+                            Part {{ add $num 1 }}: {{ $post.Params.title}}
+                        </a>
+                    </li>
+                    {{end}}
+                    {{end}}
+                </ul>
+            </div>
         </section>
     </div>
 </main>
