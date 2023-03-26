@@ -6,19 +6,23 @@
 <main id="main">
     <div class="content">
         {{ partial "header.html" . }}
-        <h1>Tags</h1>
-        <section id="tags">
-            {{ $data := .Data }}
-            <ul class="tags">
-                {{ range $key, $value := .Data.Terms.ByCount }}
-                {{ if $value.Name}}
-                <li>
-                    <a href="{{ $value.Name | urlize }}">
-                        {{ $value.Name }} <span>({{ $value.Count }})</span>
+        <h1>Series</h1>
+        <section id="series">
+            <ul class="series-list">
+                <h4>This article is part of a series.</h4>
+                {{ range $num,$post := (index .Site.Taxonomies.series (index .Params.series 0 | urlize)).Pages.ByDate }}
+                {{ if eq $post.Permalink $.Page.Permalink }}
+                <li class="series-list-item active">
+                    Part {{ add $num 1 }}: This Article
+                </li>
+                {{ else }}
+                <li class="list-group-item">
+                    <a href="{{$post.Permalink}}">
+                        Part {{ add $num 1 }}: {{ $post.Params.title}}
                     </a>
                 </li>
-                {{ end }}
-                {{ end }}
+                {{end}}
+                {{end}}
             </ul>
         </section>
     </div>
