@@ -6,26 +6,14 @@
 <main id="main">
     <div class="content">
         {{ partial "header.html" . }}
-        <h1>{{.Params.series}}</h1>
-        <p>{{.Params.title}}</p>
-        <br>
-
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <h1 class="mb-4">{{ .Title }}</h1>
-                    <ul class="list-unstyled">
-                        {{ range (.Page.Data.Pages.ByDate) }}
-                        <li>
-                            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-                            <p>{{ .Description }}</p>
-                        </li>
-                        {{ end }}
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <h1 class="mb-4">{{ .Title }}</h1>
+        <ul class="list-unstyled">
+            {{ range (.Page.Data.Pages.ByDate) }}
+            <li>
+                <h2><a href="{{ .RelPermalink }}"> {{ .Title }}</a></h2>
+            </li>
+            {{ end }}
+        </ul>
 
         {{ if and (isset .Params "series") (gt (len .Params.series) 0) }}
         <h1>Series</h1>
@@ -33,7 +21,8 @@
             <div>
                 <h4 class="series-title" onclick="toggleSeriesList()">{{ .Params.title}}</h4>
                 <ul id="series-list" class="series-list">
-                    {{ range $num,$post := (index .Site.Taxonomies.series (index .Params.series 0 | urlize)).Pages.ByDate }}
+                    {{ range $num,$post := (index .Site.Taxonomies.series (index .Params.series 0 |
+                    urlize)).Pages.ByDate }}
                     {{ if eq $post.Permalink $.Page.Permalink }}
                     <li class="series-list-item active">
                         Part {{ add $num 1 }}: This Article
