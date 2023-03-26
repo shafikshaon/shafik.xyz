@@ -6,7 +6,7 @@
 <main id="main">
     <div class="content">
         {{ partial "header.html" . }}
-        {{ if .Params }}
+        {{ if isset .Params "series" }}
         <h1>Series</h1>
         <section id="series">
             <div>
