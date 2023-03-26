@@ -7,7 +7,7 @@
     <div class="content">
         {{ partial "header.html" . }}
         <h1>{{.Params.series}}</h1>
-        <p>{{.Params}}</p>
+        <p>{{.Params.title}}</p>
         <br>
         {{ if and (isset .Params "series") (gt (len .Params.series) 0) }}
         <h1>Series</h1>
