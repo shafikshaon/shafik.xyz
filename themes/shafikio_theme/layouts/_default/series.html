@@ -9,8 +9,8 @@
         <h1>Series</h1>
         <section id="series">
             <div>
-                <ul class="series-list">
-                    <h4>This article is part of a series.</h4>
+                <h4 class="series-title" onclick="toggleSeriesList()">This article is part of a series.</h4>
+                <ul id="series-list" class="series-list">
                     {{ range $num,$post := (index .Site.Taxonomies.series (index .Params.series 0 | urlize)).Pages.ByDate }}
                     {{ if eq $post.Permalink $.Page.Permalink }}
                     <li class="series-list-item active">
@@ -22,12 +22,23 @@
                             Part {{ add $num 1 }}: {{ $post.Params.title}}
                         </a>
                     </li>
-                    {{end}}
-                    {{end}}
+                    {{ end }}
+                    {{ end }}
                 </ul>
             </div>
         </section>
     </div>
 </main>
+
+<script>
+  function toggleSeriesList() {
+    var seriesList = document.getElementById('series-list');
+    if (seriesList.style.display === 'none') {
+      seriesList.style.display = 'block';
+    } else {
+      seriesList.style.display = 'none';
+    }
+  }
+</script>
 </body>
 </html>
