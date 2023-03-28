@@ -9,6 +9,7 @@ copyright = "Mohd. Shafikur Rahman"
 uglyURLs = true
 enableEmoji = true
 enableGitInfo = true
+uglyURLs = true
 
 [permalinks]
     pages = "/:slug"
