@@ -21,17 +21,17 @@
                                                 class="draft-label">DRAFT</sup>{{ end }}</a>
                                     </h2>
                                 </header>
-<!--                                <div class="entry-content">-->
-<!--                                    <p>-->
-<!--                                        {{ if isset .Params "description" }}-->
-<!--                                        {{ .Description }}-->
-<!--                                        {{ else if gt (countrunes (.Content | plainify)) 120 }}-->
-<!--                                        {{ slicestr (.Content | plainify) 0 120 | safeHTML }}...-->
-<!--                                        {{ else }}-->
-<!--                                        {{ .Content | plainify | safeHTML }}-->
-<!--                                        {{ end }}-->
-<!--                                    </p>-->
-<!--                                </div>-->
+                                <div class="entry-content">
+                                    <p>
+                                        {{ if isset .Params "description" }}
+                                        {{ .Description }}
+                                        {{ else if gt (countrunes (.Content | plainify)) 120 }}
+                                        {{ slicestr (.Content | plainify) 0 120 | safeHTML }}...
+                                        {{ else }}
+                                        {{ .Content | plainify | safeHTML }}
+                                        {{ end }}
+                                    </p>
+                                </div>
                                 <footer class="entry-footer"><span title="2021-01-20 00:00:00 +0000 UTC">{{ dateFormat "Jan 2, 2006" .Date }}</span>&nbsp;·&nbsp;{{
                                     .Page.ReadingTime }} min(s)&nbsp;·&nbsp;{{ if gt .Params.tags 0 }}
                                     {{ range .Params.tags }}
