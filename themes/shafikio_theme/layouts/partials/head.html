@@ -3,7 +3,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Liste - {{ .Site.BaseURL }}">
-    <title>{{ if eq .IsHome true }}{{ .Site.Title }}{{ else }} {{ .Site.Title }} | {{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <title>{{ if eq .IsHome true }}{{ .Site.Title }}{{ else }} {{ .Site.Title }} | {{ .Title }}{{ end }}</title>
     <meta name="description" content="{{ if ne .Description "" }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     {{- if isset .Site.Params "favicon" -}}
     <link rel="icon" type="image/png" href={{ .Site.Params.favicon }} />
