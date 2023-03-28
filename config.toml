@@ -1,4 +1,4 @@
-baseURL = 'https://shafik.io'
+baseURL = 'https://shafik.xyz'
 languageCode = 'en-us'
 title = 'Shafik'
 theme = "shafikio_theme"
