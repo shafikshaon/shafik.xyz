@@ -41,12 +41,6 @@
                             <a href="{{ .Permalink }}">{{ $tag | urlize }}</a>
                         </span>
                         {{- end -}}
-
-                {{ range .Params.tags }}
-                <span class="flat-tags">
-                                            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-                                        </span>
-                {{ end }}
                     {{- end -}}
                 {{ end }}
             </div>
