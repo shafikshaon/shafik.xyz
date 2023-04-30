@@ -435,6 +435,9 @@ h1.anchor:hover {
     display: inline;
 }
 
+h2.anchor {
+    display: none;
+}
 
 .toc {
     margin: 0 2px 40px;
