@@ -27,10 +27,14 @@
 
             {{ partial "series.html" . }}
 
-            <h2>Table of Contents</h2>
+            {{ if and (gt .WordCount 400 ) (.Params.toc) }}
             <aside>
+                <header>
+                    <h2>Table of Contents</h2>
+                </header>
                 {{ .TableOfContents }}
             </aside>
+            {{ end }}
 
             <div class="post-body">
                 {{ .Content }}
@@ -53,6 +57,15 @@
         </section>
 
         {{ partial "series.html" . }}
+
+        <div>
+            {{ with .PrevInSection }}
+            <a class="previous" href="{{ .Permalink }}"> {{ .Title }}</a>
+            {{ end }}
+            {{ with .NextInSection }}
+            <a class="next" href="{{ .Permalink }}"> {{ .Title }}</a>
+            {{ end }}
+        </div>
 
         {{ if eq .Section "posts" }}
         <div id="comments">
