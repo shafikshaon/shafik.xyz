@@ -448,7 +448,7 @@ a.view-all-posts:hover {
     padding: 10px 20px;
 }
 
-.post-body a, .anchor:hover {
+.post-body a {
     box-shadow: 0 1px;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
