@@ -424,3 +424,7 @@ a.view-all-posts:hover {
     color: #4b5056;
     font-weight: bold;
 }
+
+.anchor {
+    padding: 5px 0;
+}
