@@ -430,7 +430,7 @@ a.view-all-posts:hover {
     text-decoration: none;
 }
 
-h1.anchor:hover {
+a.anchor:hover {
     color: #777;
     display: inline;
 }
