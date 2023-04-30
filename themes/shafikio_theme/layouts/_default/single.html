@@ -27,18 +27,28 @@
 
             {{ partial "series.html" . }}
 
-            {{ if gt .WordCount 400 }}
-            <aside>
-                <header>
-                    <h2>Table of Contents</h2>
-                </header>
-                {{ .TableOfContents }}
-            </aside>
-            {{ end }}
+            {{- partial "toc.html" . }}
 
+            {{- if .Content }}
             <div class="post-body">
-                {{ .Content }}
+                {{- if not (.Param "disableAnchoredHeadings") }}
+                {{- partial "anchored_headings.html" .Content -}}
+                {{- else }}{{ .Content }}{{ end }}
             </div>
+            {{- end }}
+
+<!--            {{ if gt .WordCount 400 }}-->
+<!--            <aside>-->
+<!--                <header>-->
+<!--                    <h2>Table of Contents</h2>-->
+<!--                </header>-->
+<!--                {{ .TableOfContents }}-->
+<!--            </aside>-->
+<!--            {{ end }}-->
+
+<!--            <div class="post-body">-->
+<!--                {{ .Content }}-->
+<!--            </div>-->
 
             {{ if eq .Section "posts" }}
             <div class="post-date">
