@@ -27,6 +27,11 @@
 
             {{ partial "series.html" . }}
 
+            <h2>Table of Contents</h2>
+            <aside>
+                {{ .TableOfContents }}
+            </aside>
+
             <div class="post-body">
                 {{ .Content }}
             </div>
