@@ -435,7 +435,7 @@ h1.anchor:hover {
     display: inline;
 }
 
-h2.anchor, h3.anchor, h4.anchor, h5.anchor {
+h2 .anchor, h3 .anchor, h4 .anchor, h5 .anchor {
     display: none;
 }
 
