@@ -27,7 +27,9 @@
 
             {{ partial "series.html" . }}
 
+            {{ if ne .Title "About" }}
             {{- partial "toc.html" . }}
+            {{ end }}
 
             {{- if .Content }}
             <div class="post-body">
