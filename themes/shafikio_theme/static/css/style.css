@@ -431,8 +431,8 @@ a.view-all-posts:hover {
 }
 
 .anchor:hover {
-    color: #cccccc;
-    display: flex;
+    color: #777;
+    display: inline;
 }
 
 
