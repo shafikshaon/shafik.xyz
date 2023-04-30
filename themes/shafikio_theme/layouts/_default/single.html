@@ -27,7 +27,7 @@
 
             {{ partial "series.html" . }}
 
-            {{ if and (gt .WordCount 400 ) (.Params.toc) }}
+            {{ if gt .WordCount 400 }}
             <aside>
                 <header>
                     <h2>Table of Contents</h2>
@@ -58,7 +58,7 @@
 
         {{ partial "series.html" . }}
 
-        <div>
+        <div style="padding: 0 10px;">
             {{ with .PrevInSection }}
             <a class="previous" href="{{ .Permalink }}"> {{ .Title }}</a>
             {{ end }}
