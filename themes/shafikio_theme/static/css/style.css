@@ -426,7 +426,12 @@ a.view-all-posts:hover {
 }
 
 .anchor {
-    padding: 5px 0;
+    padding: 0 10px;
+    text-decoration: none;
+}
+
+.anchor:hover {
+    color: #cccccc;
 }
 
 
