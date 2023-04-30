@@ -432,6 +432,7 @@ a.view-all-posts:hover {
 
 .anchor:hover {
     color: #cccccc;
+    display: flex;
 }
 
 
