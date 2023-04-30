@@ -454,7 +454,6 @@ a.view-all-posts:hover {
 }
 
 .post-body a {
-    box-shadow: 0 1px;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
 }
