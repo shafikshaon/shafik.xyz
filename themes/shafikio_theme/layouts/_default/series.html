@@ -7,13 +7,13 @@
     <div class="content">
         {{ partial "header.html" . }}
         <h1>{{ .Title }}</h1>
-        <ul class="list-unstyled">
+        <ol class="list-unstyled">
             {{ range (.Page.Data.Pages.ByDate) }}
             <li>
                 <a href="{{ .RelPermalink }}"> {{ .Title }}</a>
             </li>
             {{ end }}
-        </ul>
+        </ol>
 
         {{ if and (isset .Params "series") (gt (len .Params.series) 0) }}
         <h1>Series</h1>
