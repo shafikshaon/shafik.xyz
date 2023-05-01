@@ -61,12 +61,12 @@
             <ul>
                 {{ with .PrevInSection }}
                 <li>
-                    <a class="previous" href="{{ .Permalink }}"> {{ .Title }}</a>
+                    <a class="previous" href="{{ .Permalink }}"> <span>&#8592;</span> Prev</a>
                 </li>
                 {{ end }}
                 {{ with .NextInSection }}
                 <li>
-                    <a class="next" href="{{ .Permalink }}"> {{ .Title }}</a>
+                    <a class="next" href="{{ .Permalink }}"> Next <span>&#8594;</span></a>
                 </li>
                 {{ end }}
             </ul>

@@ -466,10 +466,11 @@ h2 .anchor, h3 .anchor, h4 .anchor, h5 .anchor {
 
 .pager {
     padding: 10px 0;
+    margin-bottom: 4rem;
 }
 
 .pager ul li {
-    display: inline-block;
+    display: inline;
 }
 
 .pager .previous {
@@ -479,3 +480,18 @@ h2 .anchor, h3 .anchor, h4 .anchor, h5 .anchor {
 .pager .next {
     float: right;
 }
+
+.pager ul {
+    padding-left: 0;
+}
+
+.pager ul li a {
+    padding: 10px 15px;
+    background: #eee;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 0;
+}
+ .pager ul li a:hover {
+    background: #e1e4e8;
+ }
