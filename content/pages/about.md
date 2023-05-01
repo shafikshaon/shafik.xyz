@@ -2,7 +2,7 @@
 title: About
 ---
 
-## Hey, I'm Shafik!
+## Hey, I'm Shafik! 👋
 
 Welcome to my digital space.
 
