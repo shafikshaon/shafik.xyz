@@ -6,6 +6,11 @@
         <a {{ if $pag.HasPrev }}href="{{ $pag.Prev.URL }}"{{ end }} class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
         {{ end }}
     </li>
+
+    <span class="pagination__item pagination__item--current">
+		{{- .Paginator.PageNumber }}/{{ .Paginator.TotalPages -}}
+	</span>
+
     <li class="page-item page-next">
         {{ if $pag.HasNext }}
         <a {{ if $pag.HasNext }}href="{{ $pag.Next.URL }}"{{ end }} class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
@@ -14,17 +19,3 @@
 </ul>
 {{ end }}
 
-
-{{- if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
-<div class="pagination">
-    {{- if .Paginator.HasPrev }}
-    <a class="pagination__item pagination__item--prev btn" href="{{ .Paginator.Prev.URL }}">«</a>
-    {{- end }}
-    <span class="pagination__item pagination__item--current">
-		{{- .Paginator.PageNumber }}/{{ .Paginator.TotalPages -}}
-	</span>
-    {{- if .Paginator.HasNext }}
-    <a class="pagination__item pagination__item--next btn" href="{{ .Paginator.Next.URL }}">»</a>
-    {{- end }}
-</div>
-{{- end }}
