@@ -39,30 +39,17 @@
             </div>
             {{- end }}
 
-<!--            {{ if gt .WordCount 400 }}-->
-<!--            <aside>-->
-<!--                <header>-->
-<!--                    <h2>Table of Contents</h2>-->
-<!--                </header>-->
-<!--                {{ .TableOfContents }}-->
-<!--            </aside>-->
-<!--            {{ end }}-->
-
-<!--            <div class="post-body">-->
-<!--                {{ .Content }}-->
-<!--            </div>-->
-
             {{ if eq .Section "posts" }}
             <div class="post-date">
                 <span class="g time"><strong>Written at:</strong> {{.Date.Format "January 2, 2006"}} </span> &#8729;
                 {{ $taxonomy := "tags" }}
-                    {{ with .Param $taxonomy }}
-                        {{ range $index, $tag := . }} {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
-                        <span class="flat-tags">
+                {{ with .Param $taxonomy }}
+                {{ range $index, $tag := . }} {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
+                <span class="flat-tags">
                             <a href="{{ .Permalink }}">{{ $tag | urlize }}</a>
                         </span>
-                        {{- end -}}
-                    {{- end -}}
+                {{- end -}}
+                {{- end -}}
                 {{ end }}
             </div>
             {{ end }}
@@ -70,14 +57,21 @@
 
         {{ partial "series.html" . }}
 
-        <div style="padding: 10px 0;">
-            {{ with .PrevInSection }}
-            <a class="previous" href="{{ .Permalink }}"> {{ .Title }}</a>
-            {{ end }}
-            {{ with .NextInSection }}
-            <a class="next" href="{{ .Permalink }}"> {{ .Title }}</a>
-            {{ end }}
+        <div class="pager">
+            <ul>
+                {{ with .PrevInSection }}
+                <li>
+                    <a class="previous" href="{{ .Permalink }}"> {{ .Title }}</a>
+                </li>
+                {{ end }}
+                {{ with .NextInSection }}
+                <li>
+                    <a class="next" href="{{ .Permalink }}"> {{ .Title }}</a>
+                </li>
+                {{ end }}
+            </ul>
         </div>
+
 
         {{ if eq .Section "posts" }}
         <div id="comments">

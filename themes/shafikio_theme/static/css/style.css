@@ -412,10 +412,12 @@ a.view-all-posts:hover {
     border-top: 0.25rem solid rgb(0 0 0);
     border-bottom: 0.25rem solid rgb(0 0 0);
 }
-.series-list h4{
+
+.series-list h4 {
     margin-top: 0;
 }
-.series-list li{
+
+.series-list li {
     list-style: none;
     padding-top: 0.5rem;
 }
@@ -460,4 +462,20 @@ h2 .anchor, h3 .anchor, h4 .anchor, h5 .anchor {
 .post-body a {
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
+}
+
+.pager {
+    padding: 10px 0;
+}
+
+.pager ul li {
+    display: inline-block;
+}
+
+.pager .previous {
+    float: left;
+}
+
+.pager .next {
+    float: right;
 }
