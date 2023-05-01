@@ -13,11 +13,11 @@
                 {{ range $key, $value := .Data.Terms.ByCount }}
                 {{ if $value.Name}}
                 <li>
-                    <a href="{{ $value.Name | urlize }}">
+                    <a href="{{ $value.Name | urlize }}" title="{{ $value.Name }}">
                         {{ $value.Name }}
                     </a>
 
-                    <span>({{ $value.Count }})</span>
+                    <span>(<strong>{{ $value.Count }}</strong>)</span>
                 </li>
                 {{ end }}
                 {{ end }}
