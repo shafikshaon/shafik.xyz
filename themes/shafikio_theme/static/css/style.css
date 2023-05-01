@@ -241,7 +241,6 @@ img {
 }
 
 .tags li, .recent-posts li {
-    display: inline-block;
     font-weight: 500;
     margin: 0.25rem;
 }
@@ -255,6 +254,15 @@ img {
     transition: transform .1s;
 }
 
+.tags li {
+    display: flex;
+    align-items: baseline;
+    padding-bottom: 0.1rem;
+}
+
+.tags li span {
+    flex: 0 1 auto;
+}
 
 .post-entry {
     position: relative;

@@ -14,8 +14,10 @@
                 {{ if $value.Name}}
                 <li>
                     <a href="{{ $value.Name | urlize }}">
-                        {{ $value.Name }} <span>({{ $value.Count }})</span>
+                        {{ $value.Name }}
                     </a>
+
+                    <span>({{ $value.Count }})</span>
                 </li>
                 {{ end }}
                 {{ end }}
