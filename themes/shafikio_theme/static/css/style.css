@@ -86,6 +86,7 @@ pre {
     overflow: auto;
     overflow-x: scroll;
     overflow-wrap: normal;
+    background: #f8f8f8;
 }
 
 code, pre {
