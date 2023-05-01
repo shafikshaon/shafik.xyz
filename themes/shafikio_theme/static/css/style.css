@@ -315,7 +315,7 @@ img {
 }
 
 .flat-tags a {
-    color: #4848F1FF;
+    color: #4d4dd3;
     padding: 0.20rem;
     margin: 0 0.10rem;
     border-radius: 0.20rem;
@@ -323,7 +323,7 @@ img {
 }
 
 .flat-tags a:hover {
-    color: #4848f1;
+    color: #0000ff;
 }
 
 .pagination {
