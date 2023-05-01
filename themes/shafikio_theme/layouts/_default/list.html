@@ -36,7 +36,7 @@
                                     .Page.ReadingTime }} min(s)&nbsp;·&nbsp;{{ if gt .Params.tags 0 }}
                                     {{ range .Params.tags }}
                                         <span class="flat-tags">
-                                            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+                                            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">#{{ . }}</a>
                                         </span>
                                     {{ end }}
                                     {{ end }}
