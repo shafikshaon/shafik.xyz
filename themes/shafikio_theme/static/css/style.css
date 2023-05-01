@@ -255,6 +255,10 @@ img {
 }
 
 .tags li {
+    width: 100%;
+}
+
+.tags li {
     display: flex;
     align-items: baseline;
     padding-bottom: 0.1rem;
