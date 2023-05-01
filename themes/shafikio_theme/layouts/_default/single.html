@@ -42,6 +42,9 @@
             {{ if eq .Section "posts" }}
             <div class="post-date">
                 <span class="g time"><strong>Written at:</strong> {{.Date.Format "January 2, 2006"}} </span> &#8729;
+                {{ if .GitInfo }}
+                <span class="g time"><strong>Last updated at:</strong> {{ .GitInfo.AuthorDate.Format "January 2, 2006" }} </span> &#8729;
+                {{ end }}
                 {{ $taxonomy := "tags" }}
                 {{ with .Param $taxonomy }}
                 {{ range $index, $tag := . }} {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
@@ -51,6 +54,10 @@
                 {{- end -}}
                 {{- end -}}
                 {{ end }}
+
+                Commit ID: {{ .GitInfo.AbbreviatedHash }}<br>
+                <a href="https://github.com/yourusername/yourrepository/commit/{{ .GitInfo.Hash }}" target="_blank" rel="noopener noreferrer">View Commit on GitHub</a>
+
             </div>
             {{ end }}
         </section>
