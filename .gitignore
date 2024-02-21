@@ -12,4 +12,9 @@ hugo.linux
 # Temporary lock file while building
 /.hugo_build.lock
 
+.DS_Store
+node_modules
+dist
+tmp
+
 .idea/
