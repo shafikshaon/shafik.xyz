@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://shafik.xyz"
 title = "Shafik's blog"
 theme = "shafik.xyz"
 pygmentsCodeFences = true
