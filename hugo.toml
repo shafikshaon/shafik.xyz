@@ -1,11 +1,9 @@
 baseURL = "/"
-languageCode = "zh-cn"
 title = "Shafik's blog"
 theme = "shafik.xyz"
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 copyright = "Mohd. Shafikur Rahman"
-uglyURLs = true
 
 [googleAnalytics]
 trackingId = "G-LW8GG2RMQG"
