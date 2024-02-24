@@ -9,6 +9,7 @@ copyright = "Mohd. Shafikur Rahman"
 trackingId = "G-LW8GG2RMQG"
 
 [params]
+trackingId = "G-LW8GG2RMQG"
 author = "Shafikur Rahman"
 description = "👋 Software Engineer | 🌍 Dhaka, Bangladesh | Python, Go, JavaScript | 🚀 Building solutions"
 github = "shafikshaon"
@@ -24,24 +25,11 @@ rss = true
 keywords = "blog, software engineer, django, golang, go"
 lastmod = true
 userStatusEmoji = "😀"
-favicon = "/images/github.png"
-avatar = "/images/avatar.png"
-headerIcon = "/images/GitHub-Mark-Light-32px.png"
+favicon = "/images/github.webp"
+avatar = "/images/avatar.webp"
+headerIcon = "/images/GitHub-Mark-Light-32px.webp"
 location = "Dhaka"
 enableGitalk = false
-
-[params.gitalk]
-clientID = "Your client ID"
-clientSecret = "Your client secret"
-repo = "repo"
-owner = "shafikshaon"
-admin = "shafikshaon"
-id = "location.pathname"
-labels = "gitalk"
-perPage = 15
-pagerDirection = "last"
-createIssueManually = true
-distractionFreeMode = false
 
 [frontmatter]
 lastmod = ["lastmod", ":fileModTime", ":default"]
