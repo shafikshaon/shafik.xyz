@@ -1,9 +1,48 @@
-baseURL = '/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = 'shafik.xyz'
+baseURL = "/"
+languageCode = "zh-cn"
+title = "Shafik's blog"
+theme = "shafik.xyz"
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+copyright = "Mohd. Shafikur Rahman"
 
-[taxonomies]
-    category = 'categories'
-    tag = 'tags'
-    series = 'series'
+[googleAnalytics]
+trackingId = "G-LW8GG2RMQG"
+
+[params]
+author = "Shafikur Rahman"
+description = "👋 Software Engineer | 🌍 Dhaka, Bangladesh | Python, Go, JavaScript | 🚀 Building solutions"
+github = "shafikshaon"
+facebook = ""
+twitter = "shafikshaon"
+linkedin = "shafikshaon"
+instagram = ""
+tumblr = ""
+stackoverflow = "4751726"
+email = "shafikshaon@gmail.com"
+url = "https://shafik.xyz"
+keywords = "blog, google analytics"
+rss = true
+lastmod = true
+userStatusEmoji = "😀"
+favicon = "/images/github.png"
+avatar = "/images/avatar.png"
+headerIcon = "/images/GitHub-Mark-Light-32px.png"
+location = "Dhaka"
+enableGitalk = false
+
+[params.gitalk]
+clientID = "Your client ID"
+clientSecret = "Your client secret"
+repo = "repo"
+owner = "shafikshaon"
+admin = "shafikshaon"
+id = "location.pathname"
+labels = "gitalk"
+perPage = 15
+pagerDirection = "last"
+createIssueManually = true
+distractionFreeMode = false
+
+[frontmatter]
+lastmod = ["lastmod", ":fileModTime", ":default"]
