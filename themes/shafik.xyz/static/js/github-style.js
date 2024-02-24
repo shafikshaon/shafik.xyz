@@ -1,100 +1,18 @@
-const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-const monthsFull = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-const now = new Date();
-let contributions;
-
-(() => {
-    setRelativeTime();
-    const dom = document.querySelector('#contributions');
-    if (!dom) {
-        return;
-    }
-
-    contributions = JSON.parse(dom.getAttribute('data'));
-    let year = 0;
-    for (const item of contributions) {
-        item.publishDate = decodeURI(item.publishDate).replace(' ', 'T');
-        item.date = new Date(item.publishDate);
-        if (item.date.getFullYear() > year) {
-            year = item.date.getFullYear();
-        }
-        item.title = decodeURI(item.title);
-    }
-
-    yearList();
-    switchYear(year.toString());
-})();
-
-function switchYear(year) {
-    let startDate;
-    let endDate;
-    if (year !== now.getFullYear().toString()) {
-        const date = new Date(Number(year), 0, 1, 0, 0, 0, 0);
-        startDate = new Date(date.getFullYear(), 0, 1);
-        endDate = new Date(date.getFullYear(), 11, 31);
-    } else {
-        endDate = now;
-        startDate = new Date(endDate.getTime() - 364 * 24 * 60 * 60 * 1000 - endDate.getDay() * 24 * 60 * 60 * 1000);
-    }
-    startDate.setHours(0, 0, 0, 0);
-    endDate.setHours(23, 59, 59, 999);
-    const posts = [];
-    const ms = [];
-    for (const item of contributions) {
-        if (item.date >= startDate && item.date <= endDate) {
-            posts.push(item);
-            const time = item.date.getFullYear().toString() + "-" + item.date.getMonth().toString();
-            if (!ms.includes(time)) {
-                ms.push(time);
-            }
-        }
-    }
-    posts.sort((a, b) => {
-        return b - a
-    });
-    document.querySelector('#posts-activity').innerHTML = '';
-    for (const time of ms) {
-        const node = document.createElement('div');
-        const array = time.split("-");
-        node.innerHTML = monthly(array[0], Number(array[1]), posts);
-        document.querySelector('#posts-activity').appendChild(node);
-    }
-
-    graph(year, posts, startDate, endDate);
-
-    const yearList = document.querySelectorAll('.js-year-link');
-    for (const elem of yearList) {
-        if (elem.innerText === year) {
-            elem.classList.add('selected');
-        } else {
-            elem.classList.remove('selected');
-        }
-    }
-}
-
-function monthly(year, month, posts) {
-    const monthPosts = posts.filter(post =>
-        post.date.getFullYear().toString() === year && post.date.getMonth() === month
-    );
-    let liHtml = '';
-    for (const post of monthPosts) {
-        liHtml += `<li class="ml-0 py-1 d-flex">
+const months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],monthsFull=["January","February","March","April","May","June","July","August","September","October","November","December"],now=new Date;let contributions;function switchYear(t){let e,l;if(t!==now.getFullYear().toString()){let a=new Date(Number(t),0,1,0,0,0,0);e=new Date(a.getFullYear(),0,1),l=new Date(a.getFullYear(),11,31)}else l=now,e=new Date(l.getTime()-314496e5-864e5*l.getDay());e.setHours(0,0,0,0),l.setHours(23,59,59,999);let s=[],$=[];for(let n of contributions)if(n.date>=e&&n.date<=l){s.push(n);let o=n.date.getFullYear().toString()+"-"+n.date.getMonth().toString();$.includes(o)||$.push(o)}for(let r of(s.sort((t,e)=>e-t),document.querySelector("#posts-activity").innerHTML="",$)){let i=document.createElement("div"),_=r.split("-");i.innerHTML=monthly(_[0],Number(_[1]),s),document.querySelector("#posts-activity").appendChild(i)}graph(t,s,e,l);let c=document.querySelectorAll(".js-year-link");for(let d of c)d.innerText===t?d.classList.add("selected"):d.classList.remove("selected")}function monthly(t,e,l){let a=l.filter(l=>l.date.getFullYear().toString()===t&&l.date.getMonth()===e),s="";for(let $ of a)s+=`<li class="ml-0 py-1 d-flex">
     <div
       class="col-8 css-truncate css-truncate-target lh-condensed width-fit flex-auto min-width-0">
-      <a href="${post.link}">${post.title}</a>
+      <a href="${$.link}">${$.title}</a>
     </div>
-    <time  title="This post was made on ${months[post.date.getMonth()]} ${post.date.getDate()}"
+    <time  title="This post was made on ${months[$.date.getMonth()]} ${$.date.getDate()}"
       class="col-2 text-right f6 text-gray-light pt-1">
-      ${months[post.date.getMonth()]} ${post.date.getDate()}
+      ${months[$.date.getMonth()]} ${$.date.getDate()}
     </time>
-  </li>`;
-    }
-    return `
+  </li>`;return`
   <div class="contribution-activity-listing float-left col-12 col-lg-10">
     <div class="width-full pb-4">
       <h3 class="h6 pr-2 py-1 border-bottom mb-3" style="height: 14px;">
-        <span class="color-bg-canvas pl-2 pr-3">${monthsFull[month]} <span
-            class="text-gray">${monthPosts.length > 0 ? monthPosts[0].date.getFullYear() : year}</span></span>
+        <span class="color-bg-canvas pl-2 pr-3">${monthsFull[e]} <span
+            class="text-gray">${a.length>0?a[0].date.getFullYear():t}</span></span>
       </h3>
 
       <div class="TimelineItem ">
@@ -109,7 +27,7 @@ function monthly(year, month, posts) {
           <details class="Details-element details-reset" open>
             <summary role="button" class="btn-link f4 muted-link no-underline lh-condensed width-full">
               <span class="color-text-primary ws-normal text-left">
-                Created ${monthPosts.length} post${monthPosts.length > 1 ? 's' : ''}
+                Created ${a.length} post${a.length>1?"s":""}
               </span>
               <span class="d-inline-block float-right color-icon-secondary">
                 <span class="Details-content--open float-right">
@@ -129,115 +47,16 @@ function monthly(year, month, posts) {
             </summary>
             <div>
               <ul class="list-style-none mt-1">
-                ${liHtml}
+                ${s}
               </ul>
             </div>
           </details>
         </div>
       </div>
     </div>
-  </div>`;
-}
-
-function yearList() {
-    const years = [];
-    for (const item of contributions) {
-        const year = item.date.getFullYear();
-        if (!years.includes(year)) {
-            years.push(year);
-        }
-    }
-    years.sort((a, b) => {
-        return b - a
-    });
-
-    for (let i = 0; i < years.length; i++) {
-        const year = years[i];
-        const node = document.createElement('li');
-        node.innerHTML = `<li><a class="js-year-link filter-item px-3 mb-2 py-2" onclick="switchYear('${year}')">${year}</a></li>`;
-        document.querySelector('#year-list').appendChild(node);
-    }
-}
-
-function graph(year, posts, startDate, endDate) {
-    const postsStr = posts.length === 1 ? "post" : "posts";
-    if (year === now.getFullYear().toString()) {
-        document.querySelector('#posts-count').innerText = `${posts.length}  ${postsStr} in the last year`;
-    } else {
-        document.querySelector('#posts-count').innerText = `${posts.length}  ${postsStr} in ${year}`;
-    }
-
-    let html = ``;
-    const count = {};
-    for (const post of posts) {
-        const date = `${post.date.getFullYear()}-${(post.date.getMonth() + 1).toString().padStart(2, '0')}-${post.date.getDate().toString().padStart(2, '0')}`;
-        if (count[date] === undefined) {
-            count[date] = 1;
-        } else {
-            count[date]++;
-        }
-    }
-    const monthPos = [];
-    let startMonth = -1;
-    const weekday = startDate.getDay();
-    for (let i = 0; i < 53; i++) {
-        html += `<g transform="translate(${i * 16}, 0)">`;
-        for (let j = 0; j < 7; j++) {
-            const date = new Date(startDate.getTime() + (i * 7 + j - weekday) * 24 * 60 * 60 * 1000);
-            const dataDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
-            if (date < startDate || date > endDate) {
-                continue;
-            }
-
-            if (j === 0) {
-                if (i <= 51) {
-                    if (startMonth !== date.getMonth()) {
-                        monthPos.push(i);
-                        startMonth = date.getMonth();
-                    }
-                }
-            }
-
-            let c;
-            if (count[dataDate] === undefined) {
-                c = 0;
-            } else {
-                c = count[dataDate];
-            }
-            let color;
-            switch (c) {
-                case 0:
-                    color = "var(--color-calendar-graph-day-bg)";
-                    break;
-                case 1:
-                    color = "var(--color-calendar-graph-day-L1-bg)";
-                    break;
-                case 2:
-                    color = "var(--color-calendar-graph-day-L2-bg)";
-                    break;
-                case 3:
-                    color = "var(--color-calendar-graph-day-L3-bg)";
-                    break;
-                default:
-                    color = "var(--color-calendar-graph-day-L4-bg)";
-            }
-            html += `<rect class="day" width="11" height="11" x="${16 - i}" y="${j * 15}"
-      fill="${color}" onmouseover="svgTip(this, ${c}, '${dataDate}')" onmouseleave="hideTip()"></rect>`;
-        }
-        html += '</g>';
-    }
-    if (monthPos[1] - monthPos[0] < 2) {
-        monthPos[0] = -1;
-    }
-    for (let i = 0; i < monthPos.length; i++) {
-        const month = monthPos[i];
-        if (month === -1) {
-            continue;
-        }
-        html += `<text x="${15 * month + 16}" y="-9"
-    class="month">${months[(i + startDate.getMonth()) % 12]}</text>`;
-    }
-    html += `
+  </div>`}function yearList(){let t=[];for(let e of contributions){let l=e.date.getFullYear();t.includes(l)||t.push(l)}t.sort((t,e)=>e-t);for(let a=0;a<t.length;a++){let s=t[a],$=document.createElement("li");$.innerHTML=`<li><a class="js-year-link filter-item px-3 mb-2 py-2" onclick="switchYear('${s}')">${s}</a></li>`,document.querySelector("#year-list").appendChild($)}}function graph(t,e,l,a){let s=1===e.length?"post":"posts";t===now.getFullYear().toString()?document.querySelector("#posts-count").innerText=`${e.length}  ${s} in the last year`:document.querySelector("#posts-count").innerText=`${e.length}  ${s} in ${t}`;let $="",n={};for(let o of e){let r=`${o.date.getFullYear()}-${(o.date.getMonth()+1).toString().padStart(2,"0")}-${o.date.getDate().toString().padStart(2,"0")}`;void 0===n[r]?n[r]=1:n[r]++}let i=[],_=-1,c=l.getDay();for(let d=0;d<53;d++){$+=`<g transform="translate(${16*d}, 0)">`;for(let h=0;h<7;h++){let g=new Date(l.getTime()+(7*d+h-c)*864e5),u=`${g.getFullYear()}-${(g.getMonth()+1).toString().padStart(2,"0")}-${g.getDate().toString().padStart(2,"0")}`;if(g<l||g>a)continue;0===h&&d<=51&&_!==g.getMonth()&&(i.push(d),_=g.getMonth());let p;p=void 0===n[u]?0:n[u];let y;switch(p){case 0:y="var(--color-calendar-graph-day-bg)";break;case 1:y="var(--color-calendar-graph-day-L1-bg)";break;case 2:y="var(--color-calendar-graph-day-L2-bg)";break;case 3:y="var(--color-calendar-graph-day-L3-bg)";break;default:y="var(--color-calendar-graph-day-L4-bg)"}$+=`<rect class="day" width="11" height="11" x="${16-d}" y="${15*h}"
+      fill="${y}" onmouseover="svgTip(this, ${p}, '${u}')" onmouseleave="hideTip()"></rect>`}$+="</g>"}i[1]-i[0]<2&&(i[0]=-1);for(let m=0;m<i.length;m++){let f=i[m];-1!==f&&($+=`<text x="${15*f+16}" y="-9"
+    class="month">${months[(m+l.getMonth())%12]}</text>`)}$+=`
 <text text-anchor="start" class="wday" dx="-10" dy="8"
 style="display: none;">Sun</text>
 <text text-anchor="start" class="wday" dx="-10" dy="25">Mon</text>
@@ -249,81 +68,4 @@ style="display: none;">Thu</text>
 <text text-anchor="start" class="wday" dx="-10" dy="85">Fri</text>
 <text text-anchor="start" class="wday" dx="-10" dy="81"
 style="display: none;">Sat</text>
-`;
-    document.querySelector('#graph-svg').innerHTML = html;
-}
-
-let svgElem = document.createElement('div');
-svgElem.style.cssText = 'pointer-events: none; display: none;';
-svgElem.classList.add(...["svg-tip", "svg-tip-one-line"]);
-document.body.appendChild(svgElem);
-
-function svgTip(elem, count, dateStr) {
-    if (window.screen.width < 768) {
-        return;
-    }
-    const rect = getCoords(elem);
-    const date = new Date(dateStr);
-    const dateFmt = `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
-    if (count) {
-        svgElem.innerHTML = `<strong>${count} posts</strong> on ${dateFmt}`;
-    } else {
-        svgElem.innerHTML = `<strong>No posts</strong> on ${dateFmt}`;
-    }
-    svgElem.style.display = 'block';
-    const tipRect = svgElem.getBoundingClientRect();
-    svgElem.style.top = `${rect.top - 50}px`;
-    svgElem.style.left = `${rect.left - tipRect.width / 2 + rect.width / 2}px`;
-}
-
-function getCoords(elem) {
-    const box = elem.getBoundingClientRect();
-
-    const body = document.body;
-    const docEl = document.documentElement;
-
-    const scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
-    const scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
-
-    const clientTop = docEl.clientTop || body.clientTop || 0;
-    const clientLeft = docEl.clientLeft || body.clientLeft || 0;
-
-    const top = box.top + scrollTop - clientTop;
-    const left = box.left + scrollLeft - clientLeft;
-
-    return {top, left, width: box.width, height: box.height};
-}
-
-function relativeTime(dateStr) {
-    const now = new Date();
-    const date = new Date(dateStr);
-    const diff = Math.floor((now.getTime() - date.getTime()) / 1000);
-    const seconds = Math.floor(diff);
-    const minutes = Math.floor(diff / 60);
-    const hours = Math.floor(diff / 60 / 60);
-    const days = Math.floor(diff / 60 / 60 / 24);
-    if (seconds < 60) {
-        return `${seconds} seconds ago`;
-    }
-    if (minutes < 60) {
-        return `${minutes} minutes ago`;
-    }
-    if (hours < 24) {
-        return `${hours} hours ago`;
-    }
-    if (days < 30) {
-        return `${days} days ago`;
-    }
-    if (date.getFullYear() === now.getFullYear()) {
-        return `${date.getDate()} ${months[date.getMonth()]}`;
-    }
-    return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
-}
-
-function setRelativeTime() {
-    document.querySelectorAll('relative-time').forEach(elem => {
-        const dateStr = elem.getAttribute('datetime');
-        elem.innerHTML = relativeTime(dateStr);
-        elem.setAttribute('title', new Date(dateStr).toLocaleString());
-    });
-}
+`,document.querySelector("#graph-svg").innerHTML=$}(()=>{setRelativeTime();let t=document.querySelector("#contributions");if(!t)return;contributions=JSON.parse(t.getAttribute("data"));let e=0;for(let l of contributions)l.publishDate=decodeURI(l.publishDate).replace(" ","T"),l.date=new Date(l.publishDate),l.date.getFullYear()>e&&(e=l.date.getFullYear()),l.title=decodeURI(l.title);yearList(),switchYear(e.toString())})();let svgElem=document.createElement("div");function svgTip(t,e,l){if(window.screen.width<768)return;let a=getCoords(t),s=new Date(l),$=`${months[s.getMonth()]} ${s.getDate()}, ${s.getFullYear()}`;e?svgElem.innerHTML=`<strong>${e} posts</strong> on ${$}`:svgElem.innerHTML=`<strong>No posts</strong> on ${$}`,svgElem.style.display="block";let n=svgElem.getBoundingClientRect();svgElem.style.top=`${a.top-50}px`,svgElem.style.left=`${a.left-n.width/2+a.width/2}px`}function getCoords(t){let e=t.getBoundingClientRect(),l=document.body,a=document.documentElement,s=window.pageYOffset||a.scrollTop||l.scrollTop,$=window.pageXOffset||a.scrollLeft||l.scrollLeft,n=a.clientTop||l.clientTop||0,o=a.clientLeft||l.clientLeft||0,r=e.top+s-n,i=e.left+$-o;return{top:r,left:i,width:e.width,height:e.height}}function relativeTime(t){let e=new Date,l=new Date(t),a=Math.floor((e.getTime()-l.getTime())/1e3),s=Math.floor(a),$=Math.floor(a/60),n=Math.floor(a/60/60),o=Math.floor(a/60/60/24);return s<60?`${s} seconds ago`:$<60?`${$} minutes ago`:n<24?`${n} hours ago`:o<30?`${o} days ago`:l.getFullYear()===e.getFullYear()?`${l.getDate()} ${months[l.getMonth()]}`:`${l.getDate()} ${months[l.getMonth()]} ${l.getFullYear()}`}function setRelativeTime(){document.querySelectorAll("relative-time").forEach(t=>{let e=t.getAttribute("datetime");t.innerHTML=relativeTime(e),t.setAttribute("title",new Date(e).toLocaleString())})}svgElem.style.cssText="pointer-events: none; display: none;",svgElem.classList.add(...["svg-tip","svg-tip-one-line"]),document.body.appendChild(svgElem);

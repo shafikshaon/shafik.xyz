@@ -1,6 +1,6 @@
 ### Hi there 👋
 
- ![](https://komarev.com/ghpvc/?username=shafikshaon&&style=flat-square&color=green)
+ ![pro pic](https://komarev.com/ghpvc/?username=shafikshaon&&style=flat-square&color=green)
 
 ### I'm Shafik, a full-time full-stack developer 👨‍💻 since 2018 🚀
 

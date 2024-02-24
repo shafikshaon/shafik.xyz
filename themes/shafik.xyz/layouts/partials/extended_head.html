@@ -1,5 +1,5 @@
 <meta name="description"
-      content="{{ if .IsHome }}{{ .Site.Params.tagline }}{{ else }}{{ .Summary | plainify }}{{ end }}"/>
+      content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Summary | plainify }}{{ end }}"/>
 <meta name="keywords"
       content='{{ with .Params.Keywords }}{{ delimit . ", " }}{{ else }}{{ $.Site.Params.Keywords }}{{ end }}'/>
 <meta name="robots" content="noodp"/>
@@ -11,7 +11,7 @@
 <meta name="twitter:description"
       content="{{ if .IsHome }}{{ $.Site.Params.description }}{{ else }}{{ .Summary | plainify }}{{ end }}"/>
 <meta name="twitter:site" content="{{ $.Site.BaseURL }}"/>
-<meta name="twitter:creator" content="{{ .Params.Author }}"/>
+<meta name="twitter:creator" content="{{ .Site.Params.author }}"/>
 <meta name="twitter:image"
       content="{{ if .IsHome }}{{ $.Site.Params.avatar | absURL }}{{ else }}{{ .Params.Cover | absURL }}{{ end }}">
 
