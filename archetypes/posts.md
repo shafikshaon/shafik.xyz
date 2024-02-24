@@ -6,6 +6,7 @@ publishDate = {{ .Date }}
 tags = []
 categories = []
 series = []
+pin = false
 +++
 
 ## Introduction
