@@ -27,3 +27,6 @@ command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
 HUGO_VERSION = "0.122.0"
 
 [context.next.environment]
+
+[[plugins]]
+package = "@netlify/plugin-lighthouse"
