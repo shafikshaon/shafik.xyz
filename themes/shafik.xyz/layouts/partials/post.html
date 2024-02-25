@@ -108,6 +108,10 @@
                                     {{- .Content -}}
                                 </article>
                             </div>
+                            <div class="py-3 px-3">
+                                <strong>Commit ID:</strong> {{ .GitInfo.Hash }} &#8729;
+                                <a href="{{ .Site.Params.githubRepoUrl }}/commit/{{ .GitInfo.Hash }}" target="_blank" rel="noopener noreferrer">View Commit on GitHub</a>
+                            </div>
                         </div>
                     </div>
                 </div>

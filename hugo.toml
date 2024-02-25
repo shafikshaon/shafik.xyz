@@ -4,11 +4,13 @@ theme = "shafik.xyz"
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 copyright = "Mohd. Shafikur Rahman"
+enableGitInfo = true
 
 [googleAnalytics]
 trackingId = "G-LW8GG2RMQG"
 
 [params]
+githubRepoUrl = "https://github.com/shafikshaon/shafik.xyz"
 trackingId = "G-LW8GG2RMQG"
 author = "Shafikur Rahman"
 description = "👋 Software Engineer | 🌍 Dhaka, Bangladesh | Python, Go, JavaScript | 🚀 Building solutions"
