@@ -4,4 +4,4 @@
 
 ## Demo
 
-[https://shafik.io/](https://shafik.io/)
+[https://shafik.xyz/](https://shafik.xyz/)
