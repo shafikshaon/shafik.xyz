@@ -1,3 +1,9 @@
 {{ define "content" }}
     {{ partial "post.html" . }}
+
+    {{ if eq .Section "post" }}
+        <div id="comments">
+            {{ partial "comments.html" $ }}
+        </div>
+    {{ end }}
 {{end }}
