@@ -5,6 +5,7 @@ pygmentsCodeFences = true
 pygmentsUseClasses = true
 copyright = "Mohd. Shafikur Rahman"
 enableGitInfo = true
+enableRobotsTXT = true
 
 [googleAnalytics]
 trackingId = "G-LW8GG2RMQG"
